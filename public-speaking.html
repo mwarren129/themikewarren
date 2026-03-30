@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Public Speaking — Mike Warren</title>
+<meta name="description" content="Book Mike Warren to speak at your next event. 35+ years of business acquisition expertise, delivered from the stage.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@400;500;600;700;800;900&family=Quicksand:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --bg:#0C0C0C;--bg-card:#131313;--border:#1C1C1C;
+  --amber:#D4842A;--amber-bright:#E8963A;
+  --white:#FFFFFF;--text-high:#F0EEEA;--text-body:#D5D2CC;
+  --text-mid:#9A958D;--text-low:#5A5650;
+  --sidebar-w:260px;
+}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text-body);font-family:'Quicksand',sans-serif;font-size:17px;line-height:1.7;min-height:100vh}
+a{color:var(--amber);text-decoration:none;transition:color .2s}
+a:hover{color:var(--amber-bright)}
+img{max-width:100%;height:auto;display:block}
+
+/* ── SIDEBAR ── */
+.sidebar{position:fixed;top:0;left:0;width:var(--sidebar-w);height:100vh;background:var(--bg);border-right:1px solid var(--border);display:flex;flex-direction:column;padding:40px 28px 24px;overflow-y:auto;z-index:100}
+.sidebar-logo{margin-bottom:40px}
+.name-mike{font-family:'Bebas Neue',sans-serif;font-size:52px;color:var(--white);line-height:1;letter-spacing:2px}
+.name-warren{font-family:'Bebas Neue',sans-serif;font-size:52px;color:var(--white);line-height:1;letter-spacing:2px;border:2px solid var(--white);display:inline-block;padding:2px 8px}
+.sidebar-logo a{color:var(--white);text-decoration:none}
+.sidebar-logo a:hover{color:var(--white)}
+.nav-section{margin-bottom:28px}
+.nav-section-title{font-family:'Montserrat',sans-serif;font-weight:800;font-size:14px;color:var(--amber);text-transform:uppercase;letter-spacing:1.5px;margin-bottom:10px}
+.nav-link{display:block;font-family:'Montserrat',sans-serif;font-weight:400;font-size:15px;color:var(--text-mid);padding:4px 0;transition:color .2s}
+.nav-link:hover{color:var(--white)}
+.nav-link.active{color:var(--amber)}
+.sidebar-footer{margin-top:auto;padding-top:24px;border-top:1px solid var(--border)}
+.social-icons{display:flex;gap:16px;margin-bottom:16px}
+.social-icons a{font-family:'Montserrat',sans-serif;font-weight:600;font-size:13px;color:var(--text-mid);transition:color .2s}
+.social-icons a:hover{color:var(--amber)}
+.sidebar-copyright{font-family:'Montserrat',sans-serif;font-weight:400;font-size:12px;color:var(--text-low);line-height:1.6;opacity:.4}
+.sidebar-copyright a{color:var(--text-low);font-size:12px}
+
+/* ── MOBILE NAV ── */
+.mobile-header{display:none;position:fixed;top:0;left:0;right:0;height:60px;background:var(--bg);border-bottom:1px solid var(--border);z-index:200;align-items:center;justify-content:space-between;padding:0 20px}
+.mobile-logo{font-family:'Bebas Neue',sans-serif;font-size:28px;color:var(--white);letter-spacing:2px}
+.mobile-logo a{color:var(--white);text-decoration:none}
+.hamburger{background:none;border:none;cursor:pointer;padding:8px}
+.hamburger span{display:block;width:24px;height:2px;background:var(--white);margin:5px 0;transition:all .3s}
+.sidebar-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.7);z-index:99}
+
+/* ── MAIN CONTENT ── */
+.page-wrapper{display:flex;min-height:100vh}
+.main-content{margin-left:var(--sidebar-w);flex:1;padding:60px 60px 80px}
+.content-max{max-width:900px}
+
+/* ── HERO ── */
+.page-hero{margin-bottom:48px}
+.page-hero img{width:100%;max-height:520px;object-fit:cover;border-radius:4px;margin-bottom:32px}
+.page-hero-eyebrow{font-family:'Montserrat',sans-serif;font-weight:700;font-size:13px;color:var(--amber);text-transform:uppercase;letter-spacing:2px;margin-bottom:12px}
+.page-hero h1{font-family:'Montserrat',sans-serif;font-weight:900;font-size:40px;color:var(--white);line-height:1.15;margin-bottom:16px}
+.page-hero p{font-size:18px;color:var(--text-body);line-height:1.8;max-width:700px}
+
+/* ── PULL QUOTE ── */
+.pull-quote{border-left:3px solid var(--amber);padding:24px 0 24px 28px;margin:48px 0;max-width:700px}
+.pull-quote blockquote{font-family:'Quicksand',sans-serif;font-size:22px;font-weight:500;color:var(--text-high);line-height:1.6;font-style:italic}
+
+/* ── SECTIONS ── */
+.section{margin-bottom:56px}
+.section-heading{font-family:'Montserrat',sans-serif;font-weight:900;font-size:32px;color:var(--white);margin-bottom:24px;line-height:1.2}
+
+/* ── TOPIC CARDS ── */
+.topics-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-bottom:48px}
+.topic-card{background:var(--bg-card);border:1px solid var(--border);border-radius:6px;padding:28px 24px;transition:border-color .3s}
+.topic-card:hover{border-color:var(--amber)}
+.topic-card h3{font-family:'Montserrat',sans-serif;font-weight:800;font-size:18px;color:var(--white);margin-bottom:10px;line-height:1.3}
+.topic-card p{font-size:15px;color:var(--text-body);line-height:1.7}
+.topic-tag{display:inline-block;font-family:'Space Mono',monospace;font-size:11px;color:var(--amber);text-transform:uppercase;letter-spacing:1px;margin-bottom:12px}
+
+/* ── PHOTO STRIP ── */
+.photo-strip{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:48px 0}
+.photo-strip img{width:100%;height:320px;object-fit:cover;border-radius:4px}
+
+/* ── FORMATS ── */
+.formats-list{display:flex;flex-direction:column;gap:16px;margin-bottom:48px}
+.format-item{display:flex;align-items:flex-start;gap:16px;padding:20px 24px;background:var(--bg-card);border:1px solid var(--border);border-radius:6px}
+.format-icon{font-size:28px;flex-shrink:0;width:40px;text-align:center;padding-top:2px}
+.format-item h4{font-family:'Montserrat',sans-serif;font-weight:700;font-size:16px;color:var(--white);margin-bottom:4px}
+.format-item p{font-size:15px;color:var(--text-body);line-height:1.6}
+
+/* ── CONTACT FORM ── */
+.booking-section{background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:40px;max-width:640px;margin-top:48px}
+.booking-section h2{font-family:'Montserrat',sans-serif;font-weight:900;font-size:28px;color:var(--white);margin-bottom:8px}
+.booking-section .booking-sub{font-size:16px;color:var(--text-mid);margin-bottom:28px}
+.form-row{display:flex;gap:16px;margin-bottom:16px}
+.form-row.full{flex-direction:column}
+.form-field{flex:1;display:flex;flex-direction:column}
+.form-field label{font-family:'Montserrat',sans-serif;font-weight:600;font-size:13px;color:var(--text-mid);text-transform:uppercase;letter-spacing:1px;margin-bottom:6px}
+.form-field input,.form-field textarea,.form-field select{background:var(--bg);border:1px solid var(--border);border-radius:4px;color:var(--text-high);font-family:'Quicksand',sans-serif;font-size:15px;padding:12px 14px;transition:border-color .2s;outline:none;width:100%}
+.form-field input:focus,.form-field textarea:focus,.form-field select:focus{border-color:var(--amber)}
+.form-field textarea{resize:vertical;min-height:100px}
+.form-field select{appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%239A958D' fill='none' stroke-width='1.5'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center;padding-right:36px}
+.form-field select option{background:var(--bg-card);color:var(--text-high)}
+.btn-primary{display:inline-block;font-family:'Montserrat',sans-serif;font-weight:800;font-size:16px;color:var(--bg);background:var(--amber);border:none;border-radius:4px;padding:14px 36px;cursor:pointer;transition:background .2s;text-transform:uppercase;letter-spacing:1px;margin-top:8px}
+.btn-primary:hover{background:var(--amber-bright);color:var(--bg)}
+
+/* ── FOOTER ── */
+.page-footer{margin-top:80px;padding-top:32px;border-top:1px solid var(--border)}
+.page-footer p{font-family:'Montserrat',sans-serif;font-size:12px;color:var(--text-low);opacity:.4}
+
+/* ── RESPONSIVE ── */
+@media(max-width:900px){
+  .topics-grid{grid-template-columns:1fr}
+  .photo-strip{grid-template-columns:1fr}
+  .photo-strip img{height:260px}
+  .form-row{flex-direction:column}
+}
+@media(max-width:768px){
+  .sidebar{transform:translateX(-100%);transition:transform .3s;width:280px}
+  .sidebar.open{transform:translateX(0)}
+  .sidebar-overlay.active{display:block}
+  .mobile-header{display:flex}
+  .main-content{margin-left:0;padding:80px 20px 60px}
+  .page-hero h1{font-size:30px}
+  .section-heading{font-size:26px}
+  .booking-section{padding:24px}
+}
+</style>
+</head>
+<body>
+
+<!-- Mobile Header -->
+<div class="mobile-header">
+  <div class="mobile-logo"><a href="index.html">MIKE WARREN</a></div>
+  <button class="hamburger" onclick="toggleSidebar()" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</div>
+<div class="sidebar-overlay" onclick="toggleSidebar()"></div>
+
+<div class="page-wrapper">
+
+<!-- Sidebar -->
+<nav class="sidebar">
+  <div class="sidebar-logo">
+    <a href="index.html">
+      <div class="name-mike">MIKE</div>
+      <div class="name-warren">WARREN</div>
+    </a>
+  </div>
+  <div class="nav-section">
+    <div class="nav-section-title">About Mike</div>
+    <a href="my-story.html" class="nav-link">My Story</a>
+    <a href="books.html" class="nav-link">Mike's Books</a>
+    <a href="public-speaking.html" class="nav-link active">Public Speaking</a>
+    <a href="press-media.html" class="nav-link">Press &amp; Media</a>
+    <a href="give-back.html" class="nav-link">Give Back</a>
+  </div>
+  <div class="nav-section">
+    <div class="nav-section-title">My Companies</div>
+    <a href="software.html" class="nav-link">Software Platforms</a>
+    <a href="business-dev.html" class="nav-link">Business Development</a>
+    <a href="real-estate.html" class="nav-link">Real Estate</a>
+  </div>
+  <div class="nav-section">
+    <div class="nav-section-title">My Content</div>
+    <a href="buyers-brief.html" class="nav-link">The Buyer's Brief</a>
+    <a href="youtube.html" class="nav-link">YouTube Channels</a>
+    <a href="articles.html" class="nav-link">Articles</a>
+    <a href="socials.html" class="nav-link">Socials</a>
+  </div>
+  <div class="sidebar-footer">
+    <div class="social-icons">
+      <a href="https://instagram.com/themikewarren" target="_blank">IG</a>
+      <a href="https://linkedin.com/in/themikewarren" target="_blank">LI</a>
+      <a href="https://youtube.com/@themikewarren" target="_blank">YT</a>
+      <a href="https://x.com/themikewarren" target="_blank">X</a>
+    </div>
+    <div class="sidebar-copyright">themikewarren.com &copy; 2026<br>All Rights Reserved<br><a href="#">Terms &amp; Conditions</a></div>
+  </div>
+</nav>
+
+<!-- Main Content -->
+<main class="main-content">
+<div class="content-max">
+
+  <!-- Hero -->
+  <section class="page-hero">
+    <img src="speaking-stage-2.jpg" alt="Mike Warren speaking on stage with audience gathered around">
+    <div class="page-hero-eyebrow">Public Speaking</div>
+    <h1>35 Years of Dealmaking. Delivered From the Stage.</h1>
+    <p>Mike Warren has spoken to audiences across the country on business acquisition, creative financing, and building wealth through ownership. His talks aren't theory. They're built on 5,000+ real transactions, three private equity firms, and the hard lessons most coaches never learned because they never did the deals.</p>
+  </section>
+
+  <!-- Pull Quote -->
+  <div class="pull-quote">
+    <blockquote>"I don't teach from slides. I teach from deals I've closed, mistakes I've made, and businesses I still own today."</blockquote>
+  </div>
+
+  <!-- Topics -->
+  <section class="section">
+    <h2 class="section-heading">What Mike Speaks On</h2>
+    <div class="topics-grid">
+
+      <div class="topic-card">
+        <span class="topic-tag">Keynote</span>
+        <h3>Business Acquisition &amp; Entrepreneurship</h3>
+        <p>How everyday professionals can escape the corporate grind by buying existing, profitable businesses instead of starting from scratch. The acquisition path most people never consider.</p>
+      </div>
+
+      <div class="topic-card">
+        <span class="topic-tag">Workshop</span>
+        <h3>Creative Financing &amp; SBA Strategies</h3>
+        <p>The 80/10/10 deal structure, SBA lending mechanics, seller financing negotiations, and the financing strategies that separate successful buyers from everyone else.</p>
+      </div>
+
+      <div class="topic-card">
+        <span class="topic-tag">Keynote</span>
+        <h3>The Bulletproof Methodology</h3>
+        <p>Mike's proprietary system for evaluating deals with criteria far above bank minimums. DCR, DSCR, cash flow floors, working capital requirements, and the scoring framework that protects buyers from bad deals.</p>
+      </div>
+
+      <div class="topic-card">
+        <span class="topic-tag">Keynote / Panel</span>
+        <h3>Building Wealth Through Business Ownership</h3>
+        <p>Why the wealthiest people in America own businesses, not stocks. How to build generational wealth through acquisition, not entrepreneurship from zero.</p>
+      </div>
+
+      <div class="topic-card">
+        <span class="topic-tag">Specialty</span>
+        <h3>Profiting From Debts on Property</h3>
+        <p>Mike's RPLP program and the overlooked world of real property lien investing. How debts attached to property create investment opportunities most people never see.</p>
+      </div>
+
+      <div class="topic-card">
+        <span class="topic-tag">Specialty</span>
+        <h3>Mechanics' Liens &amp; Tax Liens</h3>
+        <p>The technical side of lien investing. How mechanics' liens and tax liens work, how they get resolved, and where the profit opportunities live in the process.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Photo Strip -->
+  <div class="photo-strip">
+    <img src="speaking-stage.png" alt="Mike Warren on stage with blue backdrop">
+    <img src="speaking-stage-3.jpg" alt="Mike Warren delivering a keynote presentation">
+  </div>
+
+  <!-- Formats -->
+  <section class="section">
+    <h2 class="section-heading">Speaking Formats</h2>
+    <div class="formats-list">
+      <div class="format-item">
+        <div class="format-icon">&#127908;</div>
+        <div>
+          <h4>Keynote Address</h4>
+          <p>45 to 90 minutes. High-energy, story-driven presentations built around real deals and real outcomes. Ideal for conferences, summits, and industry events.</p>
+        </div>
+      </div>
+      <div class="format-item">
+        <div class="format-icon">&#128101;</div>
+        <div>
+          <h4>Half-Day Workshop</h4>
+          <p>Hands-on, interactive training where attendees work through deal evaluation, financing structures, and the Bulletproof scoring framework with real examples.</p>
+        </div>
+      </div>
+      <div class="format-item">
+        <div class="format-icon">&#127897;</div>
+        <div>
+          <h4>Podcast &amp; Media Appearances</h4>
+          <p>Available for podcast interviews, virtual panels, and media features on business acquisition, entrepreneurship, and alternative investing.</p>
+        </div>
+      </div>
+      <div class="format-item">
+        <div class="format-icon">&#128188;</div>
+        <div>
+          <h4>Private Corporate Training</h4>
+          <p>Custom sessions for organizations, investor groups, and mastermind communities. Tailored content built around your audience's specific needs and deal pipeline.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Behind the Scenes Photo -->
+  <section class="section">
+    <img src="interview_2.jpg" alt="Mike Warren behind the scenes at a media interview" style="width:65%;max-height:500px;object-fit:cover;border-radius:4px;margin:0 auto">
+  </section>
+
+  <!-- Booking Form -->
+  <section class="booking-section" id="book">
+    <h2>Book Mike for Your Event</h2>
+    <p class="booking-sub">Fill out the form below and Mike's team will be in touch within 48 hours.</p>
+    <form id="contactForm" onsubmit="handleSubmit(event)">
+      <div class="form-row">
+        <div class="form-field">
+          <label for="fname">First Name</label>
+          <input type="text" id="fname" name="fname" required>
+        </div>
+        <div class="form-field">
+          <label for="lname">Last Name</label>
+          <input type="text" id="lname" name="lname" required>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-field">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required>
+        </div>
+        <div class="form-field">
+          <label for="phone">Phone</label>
+          <input type="tel" id="phone" name="phone">
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-field">
+          <label for="org">Organization / Event Name</label>
+          <input type="text" id="org" name="org">
+        </div>
+        <div class="form-field">
+          <label for="format">Speaking Format</label>
+          <select id="format" name="format">
+            <option value="">Select format...</option>
+            <option value="keynote">Keynote Address</option>
+            <option value="workshop">Half-Day Workshop</option>
+            <option value="podcast">Podcast / Media</option>
+            <option value="corporate">Private Corporate Training</option>
+            <option value="other">Other</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-field">
+          <label for="date">Tentative Event Date</label>
+          <input type="text" id="date" name="date" placeholder="e.g., September 2026">
+        </div>
+        <div class="form-field">
+          <label for="audience">Expected Audience Size</label>
+          <input type="text" id="audience" name="audience" placeholder="e.g., 200">
+        </div>
+      </div>
+      <div class="form-row full">
+        <div class="form-field">
+          <label for="details">Tell Us About Your Event</label>
+          <textarea id="details" name="details" placeholder="What's the event about? What topics are most relevant to your audience?"></textarea>
+        </div>
+      </div>
+      <button type="submit" class="btn-primary">Submit Inquiry</button>
+    </form>
+    <div id="formSuccess" style="display:none;padding:24px 0;text-align:center">
+      <p style="font-family:'Montserrat',sans-serif;font-weight:700;font-size:20px;color:var(--amber);margin-bottom:8px">Thank you!</p>
+      <p style="color:var(--text-body)">Your inquiry has been submitted. Mike's team will be in touch within 48 hours.</p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="page-footer">
+    <p>&copy; 2026 Titan Supply, LLC. All rights reserved.</p>
+  </footer>
+
+</div>
+</main>
+
+</div>
+
+<script>
+function toggleSidebar(){
+  document.querySelector('.sidebar').classList.toggle('open');
+  document.querySelector('.sidebar-overlay').classList.toggle('active');
+}
+function handleSubmit(e){
+  e.preventDefault();
+  // For now, show success message. Wire to real endpoint later.
+  document.getElementById('contactForm').style.display='none';
+  document.getElementById('formSuccess').style.display='block';
+}
+</script>
+</body>
+</html>
