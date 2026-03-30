@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Press & Media — Mike Warren</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@400;500;600;700;800;900&family=Quicksand:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --bg: #0C0C0C; --bg-card: #131313; --border: #1C1C1C;
+  --amber: #D4842A; --amber-bright: #E8963A;
+  --white: #FFFFFF; --text-high: #F0EEEA; --text-body: #D5D2CC;
+  --text-mid: #9A958D; --text-low: #5A5650; --sidebar-width: 280px;
+}
+html { scroll-behavior: smooth; }
+body {
+  background: var(--bg); color: var(--text-body);
+  font-family: 'Quicksand', sans-serif; font-size: 18px;
+  font-weight: 400; line-height: 1.5;
+  -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale;
+}
+a { color: var(--amber); text-decoration: none; transition: color 0.2s; }
+a:hover { color: var(--amber-bright); }
+img { display: block; max-width: 100%; }
+.page-wrapper { display: flex; min-height: 100vh; }
+.sidebar {
+  position: fixed; top: 0; left: 0; width: var(--sidebar-width); height: 100vh;
+  background: var(--bg); border-right: 1px solid var(--border);
+  padding: 48px 32px 32px; display: flex; flex-direction: column;
+  overflow-y: auto; z-index: 100;
+}
+.sidebar-logo { margin-bottom: 48px; }
+.sidebar-logo .name-mike { font-family: 'Bebas Neue', sans-serif; font-size: 52px; font-weight: 400; color: var(--white); letter-spacing: 2px; line-height: 1; }
+.sidebar-logo .name-warren { font-family: 'Bebas Neue', sans-serif; font-size: 52px; font-weight: 400; color: var(--white); letter-spacing: 2px; line-height: 1; border: 2px solid var(--white); display: inline-block; padding: 2px 12px 0; margin-top: 4px; }
+.nav-section { margin-bottom: 28px; }
+.nav-section-title { font-family: 'Montserrat', sans-serif; font-weight: 800; font-size: 14px; color: var(--amber); text-transform: uppercase; letter-spacing: 2px; margin-bottom: 12px; }
+.nav-link { display: block; font-family: 'Montserrat', sans-serif; font-weight: 400; font-size: 15px; color: var(--text-mid); padding: 6px 0 6px 16px; transition: color 0.2s, padding-left 0.2s; position: relative; }
+.nav-link::before { content: '\25B8'; position: absolute; left: 0; color: var(--text-low); font-size: 10px; top: 50%; transform: translateY(-50%); transition: color 0.2s; }
+.nav-link:hover { color: var(--text-high); padding-left: 20px; }
+.nav-link:hover::before { color: var(--amber); }
+.nav-link.active { color: var(--amber); }
+.nav-link.active::before { color: var(--amber); }
+.sidebar-footer { margin-top: auto; padding-top: 32px; }
+.social-icons { display: flex; gap: 16px; margin-bottom: 20px; }
+.social-icons a { color: var(--text-low); font-family: 'Montserrat', sans-serif; font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; transition: color 0.2s; }
+.social-icons a:hover { color: var(--amber); }
+.sidebar-copyright { font-family: 'Montserrat', sans-serif; font-size: 12px; font-weight: 400; color: var(--text-low); opacity: 0.4; line-height: 1.8; }
+.sidebar-copyright a { color: var(--text-low); opacity: 1; }
+.main-content { margin-left: var(--sidebar-width); flex: 1; max-width: 960px; padding: 0 60px; }
+
+/* PAGE HEADER */
+.page-header { padding: 60px 0 40px; }
+.page-eyebrow { font-family: 'Montserrat', sans-serif; font-weight: 600; font-size: 13px; color: var(--amber); text-transform: uppercase; letter-spacing: 3px; margin-bottom: 16px; }
+.page-title { font-family: 'Montserrat', sans-serif; font-weight: 900; font-size: 42px; color: var(--white); line-height: 1.15; margin-bottom: 16px; }
+.page-subtitle { font-family: 'Quicksand', sans-serif; font-size: 18px; color: var(--text-body); line-height: 1.7; max-width: 640px; }
+
+/* FEATURED ON BAR */
+.featured-bar { padding: 48px 0; border-top: 1px solid var(--border); text-align: center; }
+.featured-bar-label { font-family: 'Montserrat', sans-serif; font-weight: 600; font-size: 13px; color: var(--amber); text-transform: uppercase; letter-spacing: 3px; margin-bottom: 28px; }
+.featured-bar img { width: 100%; max-width: 780px; height: auto; margin: 0 auto; }
+
+/* MAGAZINE COVERS */
+.covers-section { padding: 60px 0; border-top: 1px solid var(--border); }
+.section-label { font-family: 'Montserrat', sans-serif; font-weight: 800; font-size: 14px; color: var(--amber); text-transform: uppercase; letter-spacing: 3px; margin-bottom: 36px; }
+.covers-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+.cover-card { text-align: center; }
+.cover-card img { width: 100%; border-radius: 4px; transition: transform 0.3s ease; }
+.cover-card:hover img { transform: scale(1.02); }
+.cover-card .cover-title { font-family: 'Montserrat', sans-serif; font-weight: 600; font-size: 14px; color: var(--text-high); margin-top: 16px; }
+.cover-card .cover-detail { font-family: 'Montserrat', sans-serif; font-weight: 400; font-size: 12px; color: var(--text-mid); margin-top: 4px; }
+
+/* CELEBRITY GALLERY */
+.gallery-section { padding: 60px 0; border-top: 1px solid var(--border); }
+.gallery-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+.gallery-card { text-align: center; }
+.gallery-card img {
+  width: 100%; aspect-ratio: 1; object-fit: cover; border-radius: 4px;
+  filter: grayscale(30%); transition: filter 0.4s ease, transform 0.3s ease;
+}
+.gallery-card:hover img { filter: grayscale(0%); transform: scale(1.03); }
+.gallery-card .gallery-name { font-family: 'Montserrat', sans-serif; font-weight: 400; font-size: 12px; color: var(--text-mid); margin-top: 10px; line-height: 1.4; }
+
+/* FOOTER */
+.main-footer { padding: 40px 0 60px; border-top: 1px solid var(--border); }
+.main-footer p { font-family: 'Montserrat', sans-serif; font-size: 13px; font-weight: 400; color: var(--text-low); opacity: 0.4; }
+.main-footer a { color: var(--text-low); }
+
+/* MOBILE */
+.mobile-header { display: none; position: fixed; top: 0; left: 0; right: 0; height: 60px; background: var(--bg); border-bottom: 1px solid var(--border); z-index: 200; align-items: center; padding: 0 20px; justify-content: space-between; }
+.mobile-logo { font-family: 'Bebas Neue', sans-serif; font-size: 28px; color: var(--white); letter-spacing: 2px; }
+.hamburger { background: none; border: none; cursor: pointer; padding: 8px; }
+.hamburger span { display: block; width: 24px; height: 2px; background: var(--white); margin: 5px 0; }
+.sidebar-overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.6); z-index: 99; }
+@media (max-width: 900px) {
+  .mobile-header { display: flex; }
+  .sidebar { transform: translateX(-100%); transition: transform 0.3s ease; z-index: 200; }
+  .sidebar.open { transform: translateX(0); }
+  .sidebar-overlay.open { display: block; }
+  .main-content { margin-left: 0; padding: 80px 24px 40px; max-width: 100%; }
+  .page-title { font-size: 32px; }
+  .covers-grid { grid-template-columns: 1fr 1fr; }
+  .gallery-grid { grid-template-columns: repeat(2, 1fr); gap: 16px; }
+}
+</style>
+</head>
+<body>
+<div class="mobile-header">
+  <span class="mobile-logo">MIKE WARREN</span>
+  <button class="hamburger" onclick="toggleSidebar()" aria-label="Menu"><span></span><span></span><span></span></button>
+</div>
+<div class="sidebar-overlay" onclick="toggleSidebar()"></div>
+<div class="page-wrapper">
+<nav class="sidebar">
+  <div class="sidebar-logo"><a href="index.html" style="color:inherit;text-decoration:none"><div class="name-mike">MIKE</div><div class="name-warren">WARREN</div></a></div>
+  <div class="nav-section">
+    <div class="nav-section-title">About Mike</div>
+    <a href="my-story.html" class="nav-link">My Story</a>
+    <a href="books.html" class="nav-link">Mike's Books</a>
+    <a href="public-speaking.html" class="nav-link">Public Speaking</a>
+    <a href="press-media.html" class="nav-link active">Press &amp; Media</a>
+    <a href="give-back.html" class="nav-link">Give Back</a>
+  </div>
+  <div class="nav-section">
+    <div class="nav-section-title">My Companies</div>
+    <a href="software.html" class="nav-link">Software Platforms</a>
+    <a href="business-dev.html" class="nav-link">Business Development</a>
+    <a href="real-estate.html" class="nav-link">Real Estate</a>
+  </div>
+  <div class="nav-section">
+    <div class="nav-section-title">My Content</div>
+    <a href="buyers-brief.html" class="nav-link">The Buyer's Brief</a>
+    <a href="youtube.html" class="nav-link">YouTube Channels</a>
+    <a href="articles.html" class="nav-link">Articles</a>
+    <a href="socials.html" class="nav-link">Socials</a>
+  </div>
+  <div class="sidebar-footer">
+    <div class="social-icons">
+      <a href="https://instagram.com/themikewarren" target="_blank">IG</a>
+      <a href="https://linkedin.com/in/themikewarren" target="_blank">LI</a>
+      <a href="https://youtube.com/@themikewarren" target="_blank">YT</a>
+      <a href="https://x.com/themikewarren" target="_blank">X</a>
+    </div>
+    <div class="sidebar-copyright">themikewarren.com &copy; 2026<br>All Rights Reserved<br><a href="#">Terms &amp; Conditions</a></div>
+  </div>
+</nav>
+<main class="main-content">
+
+  <section class="page-header">
+    <div class="page-eyebrow">About Mike</div>
+    <h1 class="page-title">Press & Media</h1>
+    <p class="page-subtitle">Magazine covers, media appearances, and 35 years of being in the room where it happens.</p>
+  </section>
+
+  <!-- AS FEATURED ON -->
+  <section class="featured-bar">
+    <div class="featured-bar-label">As Featured On</div>
+    <img src="logo-bar-featured.png" alt="As featured on Fortune, FOX, CNN, SUCCESS, USA Today, SiriusXM, ABC, NBC, Entrepreneur">
+  </section>
+
+  <!-- MAGAZINE COVERS -->
+  <section class="covers-section">
+    <div class="section-label">Cover Stories</div>
+    <div class="covers-grid">
+      <div class="cover-card">
+        <img src="cover-unite4good.jpg" alt="Unite4Good Magazine Cover - Mike Warren Social Business Icon">
+        <div class="cover-title">Unite4:Good Magazine</div>
+        <div class="cover-detail">Social Business Icon &middot; April 2017</div>
+      </div>
+      <div class="cover-card">
+        <img src="cover-acquisition-aficionado.png" alt="Acquisition Aficionado Magazine Cover - Mike Warren">
+        <div class="cover-title">Acquisition Aficionado</div>
+        <div class="cover-detail">The Art of the 3x3x3 Perfect Deal &middot; Issue 6</div>
+      </div>
+      <div class="cover-card">
+        <img src="cover-Icon-magazine.jpg" alt="Icon Advisor Magazine Cover - Mike Warren">
+        <div class="cover-title">Icon Advisor Magazine</div>
+        <div class="cover-detail">Co-Author of Guerrilla Credit with Jay Conrad Levinson &middot; 2013</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CELEBRITY GALLERY -->
+  <section class="gallery-section">
+    <div class="section-label">In The Room With</div>
+    <div class="gallery-grid">
+      <div class="gallery-card">
+        <img src="celeb-branson.jpg" alt="Mike Warren with Richard Branson">
+        <div class="gallery-name">Richard Branson<br><span style="color:var(--text-low)">Virgin Group Founder</span></div>
+      </div>
+      <div class="gallery-card">
+        <img src="celeb-kevin-harrington.png" alt="Kevin Harrington">
+        <div class="gallery-name">Kevin Harrington<br><span style="color:var(--text-low)">Shark Tank</span></div>
+      </div>
+      <div class="gallery-card">
+        <img src="celeb-wozniak.jpg" alt="Mike Warren with Steve Wozniak">
+        <div class="gallery-name">Steve Wozniak<br><span style="color:var(--text-low)">Apple Co-Founder</span></div>
+      </div>
+      <div class="gallery-card">
+        <img src="celeb_gaga.jpg" alt="Mike Warren with Lady Gaga">
+        <div class="gallery-name">Lady Gaga<br><span style="color:var(--text-low)">Artist &amp; Entrepreneur</span></div>
+      </div>
+      <div class="gallery-card">
+        <img src="celeb-cara.jpg" alt="Mike Warren with Cara Delevingne">
+        <div class="gallery-name">Cara Delevingne<br><span style="color:var(--text-low)">Model &amp; Actress</span></div>
+      </div>
+      <div class="gallery-card">
+        <img src="celeb-lisa.jpg" alt="Mike Warren with Lisa Vanderpump">
+        <div class="gallery-name">Lisa Vanderpump<br><span style="color:var(--text-low)">Restaurateur &amp; TV Star</span></div>
+      </div>
+      <div class="gallery-card">
+        <img src="celeb-michael-buffer.jpg" alt="Mike Warren with Michael Buffer">
+        <div class="gallery-name">Michael Buffer<br><span style="color:var(--text-low)">Ring Announcer</span></div>
+      </div>
+      <div class="gallery-card">
+        <img src="celeb-snipes.jpg" alt="Mike Warren with Wesley Snipes">
+        <div class="gallery-name">Wesley Snipes<br><span style="color:var(--text-low)">Actor &amp; Producer</span></div>
+      </div>
+      <div class="gallery-card">
+        <img src="celeb_irvin.jpg" alt="Mike Warren with Michael Irvin">
+        <div class="gallery-name">Michael Irvin<br><span style="color:var(--text-low)">NFL Hall of Fame</span></div>
+      </div>
+      <div class="gallery-card">
+        <img src="celeb_abraham.JPG" alt="Mike Warren with Jay Abraham">
+        <div class="gallery-name">Jay Abraham<br><span style="color:var(--text-low)">Business Strategist</span></div>
+      </div>
+      <div class="gallery-card">
+        <img src="celeb-tracy.jpg" alt="Mike Warren with Brian Tracy">
+        <div class="gallery-name">Brian Tracy<br><span style="color:var(--text-low)">Author &amp; Speaker</span></div>
+      </div>
+      <div class="gallery-card">
+        <img src="celeb-teller.jpg" alt="Mike Warren with Teller">
+        <div class="gallery-name">Teller<br><span style="color:var(--text-low)">Penn &amp; Teller</span></div>
+      </div>
+      <div class="gallery-card">
+        <img src="celeb_gerber.jpg" alt="Mike Warren with Michael Gerber">
+        <div class="gallery-name">Michael Gerber<br><span style="color:var(--text-low)">Author of The E-Myth</span></div>
+      </div>
+      <div class="gallery-card">
+        <img src="celeb-donny.jpg" alt="Mike Warren with Donny Deutsch">
+        <div class="gallery-name">Donny Deutsch<br><span style="color:var(--text-low)">CNBC</span></div>
+      </div>
+      <div class="gallery-card">
+        <img src="celeb_graham.jpg" alt="Mike Warren with Stedman Graham">
+        <div class="gallery-name">Stedman Graham<br><span style="color:var(--text-low)">Author &amp; Entrepreneur</span></div>
+      </div>
+      <div class="gallery-card">
+        <img src="celeb-jay-levinson.jpg" alt="Mike Warren with Jay Conrad Levinson">
+        <div class="gallery-name">Jay Conrad Levinson<br><span style="color:var(--text-low)">Guerrilla Marketing</span></div>
+      </div>
+      <div class="gallery-card">
+        <img src="celeb_davis_lifelock.jpg" alt="Mike Warren with Todd Davis">
+        <div class="gallery-name">Todd Davis<br><span style="color:var(--text-low)">LifeLock Founder</span></div>
+      </div>
+      <div class="gallery-card">
+        <img src="celeb_hester.jpg" alt="Mike Warren with Dave Hester">
+        <div class="gallery-name">Dave Hester<br><span style="color:var(--text-low)">Storage Wars</span></div>
+      </div>
+      <div class="gallery-card">
+        <img src="celeb_qubein_Highpoint.jpg" alt="Mike Warren with Nido Qubein">
+        <div class="gallery-name">Nido Qubein<br><span style="color:var(--text-low)">High Point University</span></div>
+      </div>
+      <div class="gallery-card">
+        <img src="celeb-seymour.jpg" alt="Mike Warren with David Seymour">
+        <div class="gallery-name">David Seymour<br><span style="color:var(--text-low)">A&amp;E</span></div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="main-footer">
+    <p>themikewarren.com &copy; 2026 / All Rights Reserved / <a href="#">Terms &amp; Conditions</a></p>
+  </footer>
+</main>
+</div>
+<script>
+function toggleSidebar() {
+  document.querySelector('.sidebar').classList.toggle('open');
+  document.querySelector('.sidebar-overlay').classList.toggle('open');
+}
+</script>
+</body>
+</html>

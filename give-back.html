@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Give Back — Mike Warren</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@400;500;600;700;800;900&family=Quicksand:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --bg: #0C0C0C; --bg-card: #131313; --border: #1C1C1C;
+  --amber: #D4842A; --amber-bright: #E8963A;
+  --white: #FFFFFF; --text-high: #F0EEEA; --text-body: #D5D2CC;
+  --text-mid: #9A958D; --text-low: #5A5650; --sidebar-width: 280px;
+}
+html { scroll-behavior: smooth; }
+body {
+  background: var(--bg); color: var(--text-body);
+  font-family: 'Quicksand', sans-serif; font-size: 18px;
+  font-weight: 400; line-height: 1.5;
+  -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale;
+}
+a { color: var(--amber); text-decoration: none; transition: color 0.2s; }
+a:hover { color: var(--amber-bright); }
+img { display: block; max-width: 100%; }
+.page-wrapper { display: flex; min-height: 100vh; }
+.sidebar {
+  position: fixed; top: 0; left: 0; width: var(--sidebar-width); height: 100vh;
+  background: var(--bg); border-right: 1px solid var(--border);
+  padding: 48px 32px 32px; display: flex; flex-direction: column;
+  overflow-y: auto; z-index: 100;
+}
+.sidebar-logo { margin-bottom: 48px; }
+.sidebar-logo .name-mike { font-family: 'Bebas Neue', sans-serif; font-size: 52px; font-weight: 400; color: var(--white); letter-spacing: 2px; line-height: 1; }
+.sidebar-logo .name-warren { font-family: 'Bebas Neue', sans-serif; font-size: 52px; font-weight: 400; color: var(--white); letter-spacing: 2px; line-height: 1; border: 2px solid var(--white); display: inline-block; padding: 2px 12px 0; margin-top: 4px; }
+.nav-section { margin-bottom: 28px; }
+.nav-section-title { font-family: 'Montserrat', sans-serif; font-weight: 800; font-size: 14px; color: var(--amber); text-transform: uppercase; letter-spacing: 2px; margin-bottom: 12px; }
+.nav-link { display: block; font-family: 'Montserrat', sans-serif; font-weight: 400; font-size: 15px; color: var(--text-mid); padding: 6px 0 6px 16px; transition: color 0.2s, padding-left 0.2s; position: relative; }
+.nav-link::before { content: '\25B8'; position: absolute; left: 0; color: var(--text-low); font-size: 10px; top: 50%; transform: translateY(-50%); transition: color 0.2s; }
+.nav-link:hover { color: var(--text-high); padding-left: 20px; }
+.nav-link:hover::before { color: var(--amber); }
+.nav-link.active { color: var(--amber); }
+.nav-link.active::before { color: var(--amber); }
+.sidebar-footer { margin-top: auto; padding-top: 32px; }
+.social-icons { display: flex; gap: 16px; margin-bottom: 20px; }
+.social-icons a { color: var(--text-low); font-family: 'Montserrat', sans-serif; font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; transition: color 0.2s; }
+.social-icons a:hover { color: var(--amber); }
+.sidebar-copyright { font-family: 'Montserrat', sans-serif; font-size: 12px; font-weight: 400; color: var(--text-low); opacity: 0.4; line-height: 1.8; }
+.sidebar-copyright a { color: var(--text-low); opacity: 1; }
+.main-content { margin-left: var(--sidebar-width); flex: 1; max-width: 960px; padding: 0 60px; }
+
+/* PAGE STYLES */
+.page-header { padding: 60px 0 40px; }
+.page-eyebrow { font-family: 'Montserrat', sans-serif; font-weight: 600; font-size: 13px; color: var(--amber); text-transform: uppercase; letter-spacing: 3px; margin-bottom: 16px; }
+.page-title { font-family: 'Montserrat', sans-serif; font-weight: 900; font-size: 42px; color: var(--white); line-height: 1.15; margin-bottom: 16px; }
+.page-subtitle { font-family: 'Quicksand', sans-serif; font-size: 18px; color: var(--text-body); line-height: 1.7; max-width: 640px; }
+
+.content-section { padding: 48px 0; border-top: 1px solid var(--border); }
+.content-section h2 { font-family: 'Montserrat', sans-serif; font-weight: 900; font-size: 28px; color: var(--white); margin-bottom: 24px; line-height: 1.2; }
+.content-section p { font-family: 'Quicksand', sans-serif; font-size: 18px; color: var(--text-body); line-height: 1.8; margin-bottom: 20px; max-width: 700px; }
+
+.content-photo { margin: 48px 0; max-width: 65%; }
+.content-photo img { width: 100%; height: auto; border-radius: 4px; max-height: 500px; object-fit: cover; }
+.content-photo-caption { font-family: 'Montserrat', sans-serif; font-size: 12px; font-weight: 400; color: var(--text-low); margin-top: 12px; font-style: italic; }
+
+.content-split { display: grid; grid-template-columns: 2fr 3fr; gap: 40px; align-items: center; margin: 48px 0; }
+.content-split img { width: 100%; border-radius: 4px; max-height: 400px; object-fit: cover; }
+.content-split-text p { font-family: 'Quicksand', sans-serif; font-size: 17px; color: var(--text-body); line-height: 1.7; margin-bottom: 16px; }
+
+.pull-quote { padding: 48px 0; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); margin: 48px 0; }
+.pull-quote blockquote { font-family: 'Quicksand', sans-serif; font-size: 26px; font-weight: 500; color: var(--text-high); line-height: 1.6; padding-left: 32px; border-left: 4px solid var(--amber); font-style: italic; max-width: 680px; }
+
+.main-footer { padding: 40px 0 60px; border-top: 1px solid var(--border); }
+.main-footer p { font-family: 'Montserrat', sans-serif; font-size: 13px; font-weight: 400; color: var(--text-low); opacity: 0.4; }
+.main-footer a { color: var(--text-low); }
+
+.mobile-header { display: none; position: fixed; top: 0; left: 0; right: 0; height: 60px; background: var(--bg); border-bottom: 1px solid var(--border); z-index: 200; align-items: center; padding: 0 20px; justify-content: space-between; }
+.mobile-logo { font-family: 'Bebas Neue', sans-serif; font-size: 28px; color: var(--white); letter-spacing: 2px; }
+.hamburger { background: none; border: none; cursor: pointer; padding: 8px; }
+.hamburger span { display: block; width: 24px; height: 2px; background: var(--white); margin: 5px 0; }
+.sidebar-overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.6); z-index: 99; }
+@media (max-width: 900px) {
+  .mobile-header { display: flex; }
+  .sidebar { transform: translateX(-100%); transition: transform 0.3s ease; z-index: 200; }
+  .sidebar.open { transform: translateX(0); }
+  .sidebar-overlay.open { display: block; }
+  .main-content { margin-left: 0; padding: 80px 24px 40px; max-width: 100%; }
+  .page-title { font-size: 32px; }
+  .content-split { grid-template-columns: 1fr; gap: 24px; }
+}
+</style>
+</head>
+<body>
+<div class="mobile-header">
+  <span class="mobile-logo">MIKE WARREN</span>
+  <button class="hamburger" onclick="toggleSidebar()" aria-label="Menu"><span></span><span></span><span></span></button>
+</div>
+<div class="sidebar-overlay" onclick="toggleSidebar()"></div>
+<div class="page-wrapper">
+<nav class="sidebar">
+  <div class="sidebar-logo"><a href="index.html" style="color:inherit;text-decoration:none"><div class="name-mike">MIKE</div><div class="name-warren">WARREN</div></a></div>
+  <div class="nav-section">
+    <div class="nav-section-title">About Mike</div>
+    <a href="my-story.html" class="nav-link">My Story</a>
+    <a href="books.html" class="nav-link">Mike's Books</a>
+    <a href="public-speaking.html" class="nav-link">Public Speaking</a>
+    <a href="press-media.html" class="nav-link">Press &amp; Media</a>
+    <a href="give-back.html" class="nav-link active">Give Back</a>
+  </div>
+  <div class="nav-section">
+    <div class="nav-section-title">My Companies</div>
+    <a href="software.html" class="nav-link">Software Platforms</a>
+    <a href="business-dev.html" class="nav-link">Business Development</a>
+    <a href="real-estate.html" class="nav-link">Real Estate</a>
+  </div>
+  <div class="nav-section">
+    <div class="nav-section-title">My Content</div>
+    <a href="buyers-brief.html" class="nav-link">The Buyer's Brief</a>
+    <a href="youtube.html" class="nav-link">YouTube Channels</a>
+    <a href="articles.html" class="nav-link">Articles</a>
+    <a href="socials.html" class="nav-link">Socials</a>
+  </div>
+  <div class="sidebar-footer">
+    <div class="social-icons">
+      <a href="https://instagram.com/themikewarren" target="_blank">IG</a>
+      <a href="https://linkedin.com/in/themikewarren" target="_blank">LI</a>
+      <a href="https://youtube.com/@themikewarren" target="_blank">YT</a>
+      <a href="https://x.com/themikewarren" target="_blank">X</a>
+    </div>
+    <div class="sidebar-copyright">themikewarren.com &copy; 2026<br>All Rights Reserved<br><a href="#">Terms &amp; Conditions</a></div>
+  </div>
+</nav>
+<main class="main-content">
+
+  <section class="page-header">
+    <div class="page-eyebrow">About Mike</div>
+    <h1 class="page-title">Give Back</h1>
+    <p class="page-subtitle">Business builds freedom. Freedom builds responsibility. Mike believes the real measure of success is what you do with it after you've made it.</p>
+  </section>
+
+  <section class="content-section">
+    <h2>Rebuilding Schools in the Dominican Republic</h2>
+    <p>Mike has participated in hands-on volunteer projects in Punta Cana, Dominican Republic, helping rebuild schools for children who lack access to basic educational infrastructure. Not writing a check from a boardroom. Picking up a drill, working alongside local families, and getting the job done.</p>
+    <p>These aren't photo opportunities. They're commitments. When you've spent your career helping people acquire businesses and build wealth, there's a responsibility to reinvest that energy where it matters most.</p>
+  </section>
+
+  <div class="content-photo">
+    <img src="charity-dominican-republic.jpg" alt="Mike Warren volunteering at a school rebuild in Punta Cana, Dominican Republic">
+    <div class="content-photo-caption">Mike volunteering during a school rebuild project in Punta Cana, Dominican Republic.</div>
+  </div>
+
+  <section class="content-section">
+    <h2>Social Business Icon</h2>
+    <p>In 2017, Mike was recognized by Unite4:Good as a "Social Business Icon" for his commitment to using business as a force for positive change. The Unite4:Good organization, founded on the principle that kindness counts, spotlighted Mike's work bridging the gap between entrepreneurial success and community impact.</p>
+  </section>
+
+  <div class="content-split">
+    <img src="cover-unite4good.jpg" alt="Unite4Good Magazine Cover featuring Mike Warren">
+    <div class="content-split-text">
+      <p>The recognition wasn't for a single event or donation. It was for a pattern: consistently showing up, consistently giving back, and consistently using the platform that business success provides to create opportunities for people who don't have the same access.</p>
+      <p>Mike's philosophy is straightforward: if you have the ability to help, you have the obligation to help. Business ownership creates the freedom. What you do with that freedom defines you.</p>
+    </div>
+  </div>
+
+  <div class="pull-quote">
+    <blockquote>"Success without purpose is just accounting. The whole point of building something is to have the freedom to give back."</blockquote>
+  </div>
+
+  <section class="content-section">
+    <h2>Boots2Suits</h2>
+    <p>Mike is a supporter of Boots2Suits, an organization dedicated to helping military veterans transition from service to civilian careers in business. The program provides mentorship, professional development, and networking opportunities to veterans who have the discipline and work ethic to succeed in business but need guidance on where to start.</p>
+    <p>For Mike, this hits close to home. Many of the professionals he works with through BizBuyEmpire share that same profile: driven people with transferable skills who need a framework, not motivation. Veterans fit that description better than almost anyone.</p>
+  </section>
+
+  <section class="content-section">
+    <h2>What's Next</h2>
+    <p>Mike continues to look for opportunities to connect business success with community impact. Whether it's mentoring young entrepreneurs, supporting educational infrastructure in underserved communities, or helping veterans find their path into business ownership, the mission stays the same: use what you've built to build something bigger than yourself.</p>
+  </section>
+
+  <footer class="main-footer">
+    <p>themikewarren.com &copy; 2026 / All Rights Reserved / <a href="#">Terms &amp; Conditions</a></p>
+  </footer>
+</main>
+</div>
+<script>
+function toggleSidebar() {
+  document.querySelector('.sidebar').classList.toggle('open');
+  document.querySelector('.sidebar-overlay').classList.toggle('open');
+}
+</script>
+</body>
+</html>
