@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Story — Mike Warren</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@400;500;600;700;800;900&family=Quicksand:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --bg: #0C0C0C; --bg-card: #131313; --border: #1C1C1C;
+  --amber: #D4842A; --amber-bright: #E8963A;
+  --white: #FFFFFF; --text-high: #F0EEEA; --text-body: #D5D2CC;
+  --text-mid: #9A958D; --text-low: #5A5650; --sidebar-width: 280px;
+}
+html { scroll-behavior: smooth; }
+body {
+  background: var(--bg); color: var(--text-body);
+  font-family: 'Quicksand', sans-serif; font-size: 18px;
+  font-weight: 400; line-height: 1.5;
+  -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale;
+}
+a { color: var(--amber); text-decoration: none; transition: color 0.2s; }
+a:hover { color: var(--amber-bright); }
+img { display: block; max-width: 100%; }
+.page-wrapper { display: flex; min-height: 100vh; }
+.sidebar {
+  position: fixed; top: 0; left: 0; width: var(--sidebar-width); height: 100vh;
+  background: var(--bg); border-right: 1px solid var(--border);
+  padding: 48px 32px 32px; display: flex; flex-direction: column;
+  overflow-y: auto; z-index: 100;
+}
+.sidebar-logo { margin-bottom: 48px; }
+.sidebar-logo .name-mike {
+  font-family: 'Bebas Neue', sans-serif; font-size: 52px; font-weight: 400;
+  color: var(--white); letter-spacing: 2px; line-height: 1;
+}
+.sidebar-logo .name-warren {
+  font-family: 'Bebas Neue', sans-serif; font-size: 52px; font-weight: 400;
+  color: var(--white); letter-spacing: 2px; line-height: 1;
+  border: 2px solid var(--white); display: inline-block;
+  padding: 2px 12px 0; margin-top: 4px;
+}
+.nav-section { margin-bottom: 28px; }
+.nav-section-title {
+  font-family: 'Montserrat', sans-serif; font-weight: 800; font-size: 14px;
+  color: var(--amber); text-transform: uppercase; letter-spacing: 2px; margin-bottom: 12px;
+}
+.nav-link {
+  display: block; font-family: 'Montserrat', sans-serif; font-weight: 400;
+  font-size: 15px; color: var(--text-mid); padding: 6px 0 6px 16px;
+  transition: color 0.2s, padding-left 0.2s; position: relative;
+}
+.nav-link::before {
+  content: '\25B8'; position: absolute; left: 0; color: var(--text-low);
+  font-size: 10px; top: 50%; transform: translateY(-50%); transition: color 0.2s;
+}
+.nav-link:hover { color: var(--text-high); padding-left: 20px; }
+.nav-link:hover::before { color: var(--amber); }
+.nav-link.active { color: var(--amber); }
+.nav-link.active::before { color: var(--amber); }
+.sidebar-footer { margin-top: auto; padding-top: 32px; }
+.social-icons { display: flex; gap: 16px; margin-bottom: 20px; }
+.social-icons a {
+  color: var(--text-low); font-family: 'Montserrat', sans-serif;
+  font-size: 12px; font-weight: 600; text-transform: uppercase;
+  letter-spacing: 1px; transition: color 0.2s;
+}
+.social-icons a:hover { color: var(--amber); }
+.sidebar-copyright {
+  font-family: 'Montserrat', sans-serif; font-size: 12px; font-weight: 400;
+  color: var(--text-low); opacity: 0.4; line-height: 1.8;
+}
+.sidebar-copyright a { color: var(--text-low); opacity: 1; }
+.main-content { margin-left: var(--sidebar-width); flex: 1; max-width: 960px; padding: 0 60px; }
+.story-hero { padding: 60px 0 0; }
+.story-hero-image {
+  position: relative; border-radius: 4px; overflow: hidden; margin-bottom: 40px;
+}
+.story-hero-image img { width: 100%; height: auto; }
+.story-hero-image::after {
+  content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 50%;
+  background: linear-gradient(to top, var(--bg), transparent); pointer-events: none;
+}
+.story-eyebrow {
+  font-family: 'Montserrat', sans-serif; font-weight: 600; font-size: 13px;
+  color: var(--amber); text-transform: uppercase; letter-spacing: 3px; margin-bottom: 16px;
+}
+.story-title {
+  font-family: 'Montserrat', sans-serif; font-weight: 900; font-size: 42px;
+  color: var(--white); line-height: 1.15; margin-bottom: 40px;
+}
+.story-section { padding: 48px 0; border-top: 1px solid var(--border); }
+.story-section:first-of-type { border-top: none; padding-top: 0; }
+.story-section h2 {
+  font-family: 'Montserrat', sans-serif; font-weight: 900; font-size: 28px;
+  color: var(--white); margin-bottom: 24px; line-height: 1.2;
+}
+.story-section p {
+  font-family: 'Quicksand', sans-serif; font-size: 18px; color: var(--text-body);
+  line-height: 1.8; margin-bottom: 20px; max-width: 700px;
+}
+.story-section p:last-of-type { margin-bottom: 0; }
+.story-photo { margin: 48px 0; position: relative; border-radius: 4px; overflow: hidden; }
+.story-photo img { width: 100%; height: auto; display: block; border-radius: 4px; }
+.story-photo-caption {
+  font-family: 'Montserrat', sans-serif; font-size: 12px; font-weight: 400;
+  color: var(--text-low); margin-top: 12px; font-style: italic;
+}
+.story-split {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 40px;
+  align-items: center; margin: 48px 0;
+}
+.story-split img { width: 100%; border-radius: 4px; }
+.story-split-text p {
+  font-family: 'Quicksand', sans-serif; font-size: 17px; color: var(--text-body);
+  line-height: 1.7; margin-bottom: 16px;
+}
+.story-quote {
+  padding: 48px 0; border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border); margin: 48px 0;
+}
+.story-quote blockquote {
+  font-family: 'Quicksand', sans-serif; font-size: 26px; font-weight: 500;
+  color: var(--text-high); line-height: 1.6; padding-left: 32px;
+  border-left: 4px solid var(--amber); font-style: italic; max-width: 680px;
+}
+.story-featured { padding: 48px 0; border-top: 1px solid var(--border); text-align: center; }
+.story-featured-label {
+  font-family: 'Montserrat', sans-serif; font-weight: 600; font-size: 13px;
+  color: var(--amber); text-transform: uppercase; letter-spacing: 3px; margin-bottom: 28px;
+}
+.story-featured img { width: 100%; max-width: 780px; height: auto; margin: 0 auto; }
+.main-footer { padding: 40px 0 60px; border-top: 1px solid var(--border); }
+.main-footer p {
+  font-family: 'Montserrat', sans-serif; font-size: 13px; font-weight: 400;
+  color: var(--text-low); opacity: 0.4;
+}
+.main-footer a { color: var(--text-low); }
+.mobile-header {
+  display: none; position: fixed; top: 0; left: 0; right: 0; height: 60px;
+  background: var(--bg); border-bottom: 1px solid var(--border); z-index: 200;
+  align-items: center; padding: 0 20px; justify-content: space-between;
+}
+.mobile-logo { font-family: 'Bebas Neue', sans-serif; font-size: 28px; color: var(--white); letter-spacing: 2px; }
+.hamburger { background: none; border: none; cursor: pointer; padding: 8px; }
+.hamburger span { display: block; width: 24px; height: 2px; background: var(--white); margin: 5px 0; }
+.sidebar-overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.6); z-index: 99; }
+@media (max-width: 900px) {
+  .mobile-header { display: flex; }
+  .sidebar { transform: translateX(-100%); transition: transform 0.3s ease; z-index: 200; }
+  .sidebar.open { transform: translateX(0); }
+  .sidebar-overlay.open { display: block; }
+  .main-content { margin-left: 0; padding: 80px 24px 40px; max-width: 100%; }
+  .story-title { font-size: 32px; }
+  .story-split { grid-template-columns: 1fr; gap: 24px; }
+  .story-quote blockquote { font-size: 22px; }
+}
+</style>
+</head>
+<body>
+<div class="mobile-header">
+  <span class="mobile-logo">MIKE WARREN</span>
+  <button class="hamburger" onclick="toggleSidebar()" aria-label="Menu"><span></span><span></span><span></span></button>
+</div>
+<div class="sidebar-overlay" onclick="toggleSidebar()"></div>
+<div class="page-wrapper">
+<nav class="sidebar">
+  <div class="sidebar-logo"><a href="index.html" style="color:inherit;text-decoration:none"><div class="name-mike">MIKE</div><div class="name-warren">WARREN</div></a></div>
+  <div class="nav-section">
+    <div class="nav-section-title">About Mike</div>
+    <a href="my-story.html" class="nav-link active">My Story</a>
+    <a href="books.html" class="nav-link">Mike's Books</a>
+    <a href="public-speaking.html" class="nav-link">Public Speaking</a>
+    <a href="press-media.html" class="nav-link">Press &amp; Media</a>
+    <a href="give-back.html" class="nav-link">Give Back</a>
+  </div>
+  <div class="nav-section">
+    <div class="nav-section-title">My Companies</div>
+    <a href="software.html" class="nav-link">Software Platforms</a>
+    <a href="business-dev.html" class="nav-link">Business Development</a>
+    <a href="real-estate.html" class="nav-link">Real Estate</a>
+  </div>
+  <div class="nav-section">
+    <div class="nav-section-title">My Content</div>
+    <a href="buyers-brief.html" class="nav-link">The Buyer's Brief</a>
+    <a href="youtube.html" class="nav-link">YouTube Channels</a>
+    <a href="articles.html" class="nav-link">Articles</a>
+    <a href="socials.html" class="nav-link">Socials</a>
+  </div>
+  <div class="sidebar-footer">
+    <div class="social-icons">
+      <a href="https://instagram.com/themikewarren" target="_blank">IG</a>
+      <a href="https://linkedin.com/in/themikewarren" target="_blank">LI</a>
+      <a href="https://youtube.com/@themikewarren" target="_blank">YT</a>
+      <a href="https://x.com/themikewarren" target="_blank">X</a>
+    </div>
+    <div class="sidebar-copyright">themikewarren.com &copy; 2026<br>All Rights Reserved<br><a href="#">Terms &amp; Conditions</a></div>
+  </div>
+</nav>
+<main class="main-content">
+  <section class="story-hero">
+    <div class="story-hero-image">
+      <img src="hero-nyc-interview.jpg" alt="Mike Warren being interviewed in New York City">
+    </div>
+    <div class="story-eyebrow">About Mike</div>
+    <h1 class="story-title">My Story</h1>
+  </section>
+  <section class="story-section">
+    <h2>It Started With a Question Nobody Could Answer</h2>
+    <p>When Mike Warren walked into his first private equity firm over 35 years ago, he asked a simple question: why do most business acquisitions fail? Nobody had a good answer. The brokers blamed the buyers. The buyers blamed the sellers. The banks blamed everyone. But nobody had a system to prevent the failures in the first place.</p>
+    <p>That question became an obsession. Over the next three decades, across three private equity firms and more than 5,000 transactions, Mike didn't just learn how deals work. He cataloged how they break. Every overleveraged purchase, every inflated projection, every seller who hid declining revenue behind creative accounting. He saw it all, documented it all, and eventually built a methodology to stop it all.</p>
+  </section>
+  <div class="story-photo">
+    <img src="speaking-stage.jpg" alt="Mike Warren speaking on stage">
+    <div class="story-photo-caption">Mike speaking on marketing and equity strategies at a national conference.</div>
+  </div>
+  <section class="story-section">
+    <h2>Building the Bulletproof Methodology</h2>
+    <p>The problem with business acquisitions isn't that good deals don't exist. It's that most buyers can't tell the difference between a good deal and a disaster until it's too late. Banks will approve loans on businesses that look profitable on paper but can't actually service their debt. Brokers will present deals with seller-adjusted numbers that evaporate the moment a new owner takes over.</p>
+    <p>Mike built the Bulletproof Methodology to cut through all of it. Non-negotiable financial criteria that every deal must pass before a dollar changes hands. A debt coverage ratio of 2x or higher with all fees included. An earnings multiple at or below 3x. A minimum of $100,000 in verified annual cash flow. Three months of working capital on hand. These aren't suggestions. They're floors.</p>
+    <p>The result is a system where buyers don't hope a deal works out. They know it will, because the math was proven before the ink dried.</p>
+  </section>
+  <div class="story-quote">
+    <blockquote>"I got tired of watching good people lose everything on bad deals. So I built a system where that can't happen."</blockquote>
+  </div>
+  <section class="story-section">
+    <h2>From Deals to Teaching</h2>
+    <p>For years, Mike kept the methodology to himself and his firms. He didn't need to teach anyone. The deals spoke for themselves. But he kept meeting the same person over and over: a smart, successful corporate professional who wanted out. They had the savings, the work ethic, and the ambition to own a business. What they didn't have was a system to avoid the landmines.</p>
+    <p>These weren't naive people. They were executives, engineers, IT directors, healthcare professionals. People who had spent decades building careers and nest eggs. And they were about to risk it all on a business acquisition with no framework for evaluating whether the deal would actually work.</p>
+    <p>That's when Mike started teaching. Not because he needed another revenue stream, but because watching qualified people fail at something he'd solved felt like a waste. He'd already cracked the code. The question was whether he could transfer it.</p>
+  </section>
+  <div class="story-split">
+    <img src="celeb-branson.jpg" alt="Mike Warren with Richard Branson">
+    <div class="story-split-text">
+      <p>Over the years, Mike's work has put him in rooms with some of the most recognized names in business and entrepreneurship. From Richard Branson to Steve Wozniak to Kevin Harrington, the relationships aren't built on fame. They're built on a shared belief that business ownership is the most reliable path to financial freedom.</p>
+    </div>
+  </div>
+  <section class="story-section">
+    <h2>Skin in the Game</h2>
+    <p>Most business coaches sell you a course and wish you luck. Mike does something no one else in his industry is willing to do: he buys businesses alongside his clients.</p>
+    <p>The equity partnership model is simple. Mike and his team don't just advise on deals. They co-own them. They put their own capital, reputation, and deal-making infrastructure behind every acquisition. If the deal fails, Mike loses too. That alignment of incentives changes everything about how deals get evaluated, structured, and closed.</p>
+    <p>It's the reason Mike's criteria are so strict. When your own money is on the line, you don't cut corners on due diligence. You don't stretch to make a marginal deal work. You walk away from anything that doesn't meet the standard, because the standard is what protects everyone.</p>
+  </section>
+  <div class="story-split">
+    <div class="story-split-text">
+      <p>When he's not analyzing deals or coaching clients, Mike is a licensed pilot, an avid snowmobiler, and someone who believes that building a life worth living is the whole point of building a business in the first place.</p>
+      <p>He's also a seven-time bestselling author, with titles ranging from business acquisition strategy to real estate investing to credit optimization with the legendary Jay Conrad Levinson of <em>Guerrilla Marketing</em> fame.</p>
+    </div>
+    <img src="life-cockpit.jpg" alt="Mike Warren in the cockpit">
+  </div>
+  <div class="story-photo">
+    <img src="life-snowmobile.jpg" alt="Mike Warren snowmobiling in the mountains">
+    <div class="story-photo-caption">Somewhere in the mountains. Because what's the point of financial freedom if you don't use it?</div>
+  </div>
+  <section class="story-section">
+    <h2>Beyond the Deal</h2>
+    <p>Success without purpose is just accounting. Mike has always believed that business ownership creates the freedom to do meaningful work beyond the balance sheet. He's been recognized as a "Social Business Icon" by Unite4:Good for his philanthropic efforts, and has participated in projects ranging from rebuilding schools in the Dominican Republic to mentoring young entrepreneurs who don't have access to traditional business education.</p>
+  </section>
+  <div class="story-photo">
+    <img src="charity-dominican-republic.jpg" alt="Mike Warren volunteering at a school rebuild in Punta Cana, Dominican Republic">
+    <div class="story-photo-caption">Volunteering during a school rebuild project in Punta Cana, Dominican Republic.</div>
+  </div>
+  <section class="story-section">
+    <h2>What's Next</h2>
+    <p>Today, Mike operates across multiple brands and platforms. DealScore Pro gives aspiring business owners free tools to evaluate deals before they commit. The Buyer's Brief delivers real-world deal analysis three times a week. BizBuyEmpire provides the coaching and partnership infrastructure to close deals with confidence. And the Bulletproof Methodology continues to evolve with every transaction.</p>
+    <p>The mission hasn't changed since day one: help smart people buy great businesses without risking everything they've built. The only thing that's changed is the scale.</p>
+  </section>
+  <section class="story-featured">
+    <div class="story-featured-label">As Featured On</div>
+    <img src="logo-bar-featured.jpg" alt="As featured on Fortune, FOX, CNN, SUCCESS, USA Today, SiriusXM, ABC, NBC, Entrepreneur">
+  </section>
+  <footer class="main-footer">
+    <p>themikewarren.com &copy; 2026 / All Rights Reserved / <a href="#">Terms &amp; Conditions</a></p>
+  </footer>
+</main>
+</div>
+<script>
+function toggleSidebar() {
+  document.querySelector('.sidebar').classList.toggle('open');
+  document.querySelector('.sidebar-overlay').classList.toggle('open');
+}
+</script>
+</body>
+</html>
