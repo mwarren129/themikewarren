@@ -103,17 +103,17 @@ img { display: block; max-width: 100%; }
   line-height: 1.8; margin-bottom: 20px; max-width: 700px;
 }
 .story-section p:last-of-type { margin-bottom: 0; }
-.story-photo { margin: 48px 0; position: relative; border-radius: 4px; overflow: hidden; }
-.story-photo img { width: 100%; height: auto; display: block; border-radius: 4px; }
+.story-photo { margin: 48px 0; position: relative; border-radius: 4px; overflow: hidden; max-width: 65%; }
+.story-photo img { width: 100%; height: auto; display: block; border-radius: 4px; max-height: 500px; object-fit: cover; }
 .story-photo-caption {
   font-family: 'Montserrat', sans-serif; font-size: 12px; font-weight: 400;
   color: var(--text-low); margin-top: 12px; font-style: italic;
 }
 .story-split {
-  display: grid; grid-template-columns: 1fr 1fr; gap: 40px;
+  display: grid; grid-template-columns: 2fr 3fr; gap: 40px;
   align-items: center; margin: 48px 0;
 }
-.story-split img { width: 100%; border-radius: 4px; }
+.story-split img { width: 100%; border-radius: 4px; max-height: 400px; object-fit: cover; }
 .story-split-text p {
   font-family: 'Quicksand', sans-serif; font-size: 17px; color: var(--text-body);
   line-height: 1.7; margin-bottom: 16px;
