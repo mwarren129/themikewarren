@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>What I've Built — Mike Warren</title>
+<meta name="description" content="Software platforms, education brands, and investment programs built and founded by Mike Warren.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@400;500;600;700;800;900&family=Quicksand:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --bg:#0C0C0C;--bg-card:#131313;--border:#1C1C1C;
+  --amber:#D4842A;--amber-bright:#E8963A;
+  --white:#FFFFFF;--text-high:#F0EEEA;--text-body:#D5D2CC;
+  --text-mid:#9A958D;--text-low:#5A5650;
+  --sidebar-w:280px;
+}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text-body);font-family:'Quicksand',sans-serif;font-size:18px;font-weight:400;line-height:1.5;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
+a{color:var(--amber);text-decoration:none;transition:color .2s}
+a:hover{color:var(--amber-bright)}
+img{display:block;max-width:100%}
+
+/* ── SIDEBAR ── */
+.sidebar{position:fixed;top:0;left:0;width:var(--sidebar-w);height:100vh;background:var(--bg);border-right:1px solid var(--border);padding:48px 32px 32px;display:flex;flex-direction:column;overflow-y:auto;z-index:100}
+.sidebar-logo{margin-bottom:48px}
+.sidebar-logo a{color:inherit;text-decoration:none}
+.name-mike{font-family:'Bebas Neue',sans-serif;font-size:52px;font-weight:400;color:var(--white);letter-spacing:2px;line-height:1}
+.name-warren{font-family:'Bebas Neue',sans-serif;font-size:52px;font-weight:400;color:var(--white);letter-spacing:2px;line-height:1;border:2px solid var(--white);display:inline-block;padding:2px 12px 0;margin-top:4px}
+.nav-section{margin-bottom:28px}
+.nav-section-title{font-family:'Montserrat',sans-serif;font-weight:800;font-size:14px;color:var(--amber);text-transform:uppercase;letter-spacing:2px;margin-bottom:12px}
+.nav-link{display:block;font-family:'Montserrat',sans-serif;font-weight:400;font-size:15px;color:var(--text-mid);padding:6px 0 6px 16px;transition:color .2s,padding-left .2s;position:relative}
+.nav-link::before{content:'\25B8';position:absolute;left:0;color:var(--text-low);font-size:10px;top:50%;transform:translateY(-50%);transition:color .2s}
+.nav-link:hover{color:var(--text-high);padding-left:20px}
+.nav-link:hover::before{color:var(--amber)}
+.nav-link.active{color:var(--amber)}
+.nav-link.active::before{color:var(--amber)}
+.sidebar-footer{margin-top:auto;padding-top:32px}
+.social-icons{display:flex;gap:16px;margin-bottom:20px}
+.social-icons a{color:var(--text-low);font-family:'Montserrat',sans-serif;font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:1px;transition:color .2s}
+.social-icons a:hover{color:var(--amber)}
+.sidebar-copyright{font-family:'Montserrat',sans-serif;font-size:12px;font-weight:400;color:var(--text-low);opacity:.4;line-height:1.8}
+.sidebar-copyright a{color:var(--text-low);opacity:1}
+
+/* ── MOBILE NAV ── */
+.mobile-header{display:none;position:fixed;top:0;left:0;right:0;height:60px;background:var(--bg);border-bottom:1px solid var(--border);z-index:200;align-items:center;justify-content:space-between;padding:0 20px}
+.mobile-logo{font-family:'Bebas Neue',sans-serif;font-size:28px;color:var(--white);letter-spacing:2px}
+.mobile-logo a{color:var(--white);text-decoration:none}
+.hamburger{background:none;border:none;cursor:pointer;padding:8px}
+.hamburger span{display:block;width:24px;height:2px;background:var(--white);margin:5px 0;transition:all .3s}
+.sidebar-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:99}
+
+/* ── MAIN CONTENT ── */
+.page-wrapper{display:flex;min-height:100vh}
+.main-content{margin-left:var(--sidebar-w);flex:1;max-width:1100px;padding:0 60px}
+
+/* ── PAGE HEADER ── */
+.page-header{padding:60px 0 40px}
+.page-eyebrow{font-family:'Montserrat',sans-serif;font-weight:600;font-size:13px;color:var(--amber);text-transform:uppercase;letter-spacing:3px;margin-bottom:16px}
+.page-title{font-family:'Montserrat',sans-serif;font-weight:900;font-size:42px;color:var(--white);line-height:1.15;margin-bottom:16px}
+.page-subtitle{font-family:'Quicksand',sans-serif;font-size:18px;color:var(--text-body);line-height:1.7;max-width:700px}
+
+/* ── COLUMNS LAYOUT ── */
+.columns-section{padding:40px 0 60px;border-top:1px solid var(--border)}
+.columns-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:24px;align-items:start}
+.column{display:flex;flex-direction:column;gap:0}
+.column-header{font-family:'Montserrat',sans-serif;font-weight:900;font-size:18px;color:var(--white);text-transform:uppercase;letter-spacing:2px;text-align:center;padding:18px 12px;background:#1a1a1a;border:1px solid #2a2a2a;border-radius:6px 6px 0 0}
+.column-body{display:flex;flex-direction:column;gap:2px;border-left:1px solid var(--border);border-right:1px solid var(--border);border-bottom:1px solid var(--border);border-radius:0 0 6px 6px;overflow:hidden}
+
+/* ── TILES ── */
+.tile{background:var(--bg-card);padding:24px 20px;transition:background .2s;position:relative}
+.tile:hover{background:#181818}
+.tile+.tile{border-top:1px solid var(--border)}
+.tile-name{font-family:'Montserrat',sans-serif;font-weight:800;font-size:16px;color:var(--white);margin-bottom:6px;line-height:1.3}
+.tile-desc{font-family:'Quicksand',sans-serif;font-size:14px;color:var(--text-mid);line-height:1.6;margin-bottom:10px}
+.tile-role{font-family:'Space Mono',monospace;font-size:10px;color:var(--amber);text-transform:uppercase;letter-spacing:1px;margin-bottom:8px}
+.tile-cta{font-family:'Montserrat',sans-serif;font-weight:700;font-size:12px;color:var(--amber);text-transform:uppercase;letter-spacing:1px;transition:color .2s}
+.tile-cta:hover{color:var(--amber-bright)}
+.tile-cta::after{content:' \2192'}
+.tile-status{display:inline-flex;align-items:center;gap:5px;font-family:'Space Mono',monospace;font-size:10px;text-transform:uppercase;letter-spacing:1px;margin-bottom:8px}
+.tile-status.live{color:#4ade80}
+.tile-status.live::before{content:'';width:5px;height:5px;background:#4ade80;border-radius:50%}
+.tile-status.soon{color:var(--amber)}
+.tile-status.soon::before{content:'';width:5px;height:5px;background:var(--amber);border-radius:50%}
+
+/* ── CONNECTOR ARROWS (Russell-style) ── */
+.connector{display:flex;justify-content:center;padding:20px 0 8px;position:relative}
+.connector-line{display:flex;align-items:flex-end;justify-content:center;gap:0;position:relative;width:80%}
+.connector-line::before{content:'';position:absolute;top:0;left:16.67%;right:16.67%;height:2px;background:var(--border)}
+.connector-arrow{width:33.33%;display:flex;justify-content:center;position:relative}
+.connector-arrow::before{content:'';width:2px;height:24px;background:var(--border);display:block}
+.connector-arrow::after{content:'';position:absolute;bottom:-6px;left:50%;transform:translateX(-50%);width:0;height:0;border-left:6px solid transparent;border-right:6px solid transparent;border-top:6px solid var(--border)}
+
+/* ── FOOTER ── */
+.main-footer{padding:40px 0 60px;border-top:1px solid var(--border)}
+.main-footer p{font-family:'Montserrat',sans-serif;font-size:13px;font-weight:400;color:var(--text-low);opacity:.4}
+.main-footer a{color:var(--text-low)}
+
+/* ── RESPONSIVE ── */
+@media(max-width:960px){
+  .columns-grid{grid-template-columns:1fr;gap:32px}
+  .connector{display:none}
+  .main-content{max-width:100%}
+}
+@media(max-width:900px){
+  .mobile-header{display:flex}
+  .sidebar{transform:translateX(-100%);transition:transform .3s ease;z-index:200;width:280px}
+  .sidebar.open{transform:translateX(0)}
+  .sidebar-overlay.open{display:block}
+  .main-content{margin-left:0;padding:80px 24px 40px}
+  .page-title{font-size:32px}
+}
+</style>
+</head>
+<body>
+
+<!-- Mobile Header -->
+<div class="mobile-header">
+  <span class="mobile-logo"><a href="index.html">MIKE WARREN</a></span>
+  <button class="hamburger" onclick="toggleSidebar()" aria-label="Menu"><span></span><span></span><span></span></button>
+</div>
+<div class="sidebar-overlay" onclick="toggleSidebar()"></div>
+
+<div class="page-wrapper">
+
+<!-- Sidebar (updated structure) -->
+<nav class="sidebar">
+  <div class="sidebar-logo">
+    <a href="index.html">
+      <div class="name-mike">MIKE</div>
+      <div class="name-warren">WARREN</div>
+    </a>
+  </div>
+  <div class="nav-section">
+    <div class="nav-section-title">About Mike</div>
+    <a href="my-story.html" class="nav-link">My Story</a>
+    <a href="books.html" class="nav-link">Mike's Books</a>
+    <a href="public-speaking.html" class="nav-link">Public Speaking</a>
+    <a href="press-media.html" class="nav-link">Press &amp; Media</a>
+    <a href="give-back.html" class="nav-link">Give Back</a>
+  </div>
+  <div class="nav-section">
+    <div class="nav-section-title">What I've Built</div>
+    <a href="what-ive-built.html#software" class="nav-link active">Software</a>
+    <a href="what-ive-built.html#acquisitions" class="nav-link">Business Acquisitions</a>
+    <a href="what-ive-built.html#realestate" class="nav-link">Real Estate &amp; Alt. Investing</a>
+  </div>
+  <div class="nav-section">
+    <div class="nav-section-title">My Content</div>
+    <a href="buyers-brief.html" class="nav-link">The Buyer's Brief</a>
+    <a href="youtube.html" class="nav-link">YouTube Channels</a>
+    <a href="articles.html" class="nav-link">Articles</a>
+    <a href="socials.html" class="nav-link">Socials</a>
+  </div>
+  <div class="sidebar-footer">
+    <div class="social-icons">
+      <a href="https://instagram.com/themikewarren" target="_blank">IG</a>
+      <a href="https://linkedin.com/in/themikewarren" target="_blank">LI</a>
+      <a href="https://youtube.com/@themikewarren" target="_blank">YT</a>
+      <a href="https://x.com/themikewarren" target="_blank">X</a>
+    </div>
+    <div class="sidebar-copyright">themikewarren.com &copy; 2026<br>All Rights Reserved<br><a href="#">Terms &amp; Conditions</a></div>
+  </div>
+</nav>
+
+<!-- Main Content -->
+<main class="main-content">
+
+  <section class="page-header">
+    <div class="page-eyebrow">What I've Built</div>
+    <h1 class="page-title">What I've Built</h1>
+    <p class="page-subtitle">Software platforms, education brands, and investment programs — each one built to solve a problem I saw firsthand across 35 years of dealmaking.</p>
+  </section>
+
+  <!-- Connector Arrows -->
+  <div class="connector">
+    <div class="connector-line">
+      <div class="connector-arrow"></div>
+      <div class="connector-arrow"></div>
+      <div class="connector-arrow"></div>
+    </div>
+  </div>
+
+  <section class="columns-section">
+    <div class="columns-grid">
+
+      <!-- COLUMN 1: Software -->
+      <div class="column" id="software">
+        <div class="column-header">Software</div>
+        <div class="column-body">
+
+          <div class="tile">
+            <div class="tile-status live">Live</div>
+            <div class="tile-role">Founder</div>
+            <div class="tile-name">DealScore Pro</div>
+            <div class="tile-desc">The deal analysis platform for business buyers. Run any deal through the Bulletproof scoring framework, search live deal flow, and upload CIMs for AI-powered analysis.</div>
+            <a class="tile-cta" href="https://dealscorepro.net" target="_blank">Visit DealScore Pro</a>
+          </div>
+
+          <div class="tile">
+            <div class="tile-status soon">Coming Soon</div>
+            <div class="tile-role">Investor &amp; Advisor</div>
+            <div class="tile-name">Ghost Score</div>
+            <div class="tile-desc">The employer accountability platform that scores companies on whether they actually respond to job candidates. Think Glassdoor, but for ghosting.</div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- COLUMN 2: Business Acquisitions -->
+      <div class="column" id="acquisitions">
+        <div class="column-header">Business Acquisitions</div>
+        <div class="column-body">
+
+          <div class="tile">
+            <div class="tile-status live">Live</div>
+            <div class="tile-role">Founder</div>
+            <div class="tile-name">BizBuyEmpire</div>
+            <div class="tile-desc">Business acquisition coaching and equity partnerships. Mike co-acquires alongside clients using the Bulletproof methodology and 80/10/10 deal structure.</div>
+            <a class="tile-cta" href="https://bizbuyempire.com" target="_blank">Visit BizBuyEmpire</a>
+          </div>
+
+          <div class="tile">
+            <div class="tile-status live">Live</div>
+            <div class="tile-role">Founder</div>
+            <div class="tile-name">Business Mastery University</div>
+            <div class="tile-desc">Comprehensive business acquisition training. From deal sourcing and due diligence to creative financing and exit strategy.</div>
+            <a class="tile-cta" href="https://businessmasteryuniversity.com" target="_blank">Visit Business Mastery University</a>
+          </div>
+
+          <div class="tile">
+            <div class="tile-status live">Live</div>
+            <div class="tile-role">Founder</div>
+            <div class="tile-name">The Buyer's Brief</div>
+            <div class="tile-desc">A 3x/week newsletter for acquisition-focused professionals. Deal breakdowns, market analysis, and the strategies behind real transactions.</div>
+            <a class="tile-cta" href="https://buyersbrief.net" target="_blank">Subscribe to The Buyer's Brief</a>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- COLUMN 3: Real Estate & Alternative Investing -->
+      <div class="column" id="realestate">
+        <div class="column-header">Real Estate &amp; Alt. Investing</div>
+        <div class="column-body">
+
+          <div class="tile">
+            <div class="tile-status live">Live</div>
+            <div class="tile-role">Founder</div>
+            <div class="tile-name">MIS University</div>
+            <div class="tile-desc">Real estate education and investing strategies. Training programs on property investing, lien profits, and building wealth outside the stock market.</div>
+            <a class="tile-cta" href="https://misuniversity.com" target="_blank">Visit MIS University</a>
+          </div>
+
+          <div class="tile">
+            <div class="tile-status live">Live</div>
+            <div class="tile-role">Founder</div>
+            <div class="tile-name">Remote Property Lien Profits</div>
+            <div class="tile-desc">Profiting from debts attached to property. Learn how to invest in real property liens and generate income from the obligations others owe.</div>
+            <a class="tile-cta" href="#" target="_blank">Learn More</a>
+          </div>
+
+          <div class="tile">
+            <div class="tile-status live">Live</div>
+            <div class="tile-role">Founder</div>
+            <div class="tile-name">Mechanics Lien Investing</div>
+            <div class="tile-desc">How mechanics' liens work, how they get resolved, and where the profit opportunities live. A focused program on one of real estate's most overlooked asset classes.</div>
+            <a class="tile-cta" href="#" target="_blank">Learn More</a>
+          </div>
+
+          <div class="tile">
+            <div class="tile-status live">Live</div>
+            <div class="tile-role">Founder</div>
+            <div class="tile-name">Tax Lien Investing</div>
+            <div class="tile-desc">Tax lien certificates and tax deed investing. How to acquire liens at auction, manage the redemption process, and build a portfolio of secured positions.</div>
+            <a class="tile-cta" href="#" target="_blank">Learn More</a>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <footer class="main-footer">
+    <p>themikewarren.com &copy; 2026 / All Rights Reserved / <a href="#">Terms &amp; Conditions</a></p>
+  </footer>
+
+</main>
+</div>
+
+<script>
+function toggleSidebar(){
+  document.querySelector('.sidebar').classList.toggle('open');
+  document.querySelector('.sidebar-overlay').classList.toggle('open');
+}
+</script>
+</body>
+</html>
