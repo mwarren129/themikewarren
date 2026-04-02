@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact — Mike Warren</title>
+<meta name="description" content="Get in touch with Mike Warren for speaking inquiries, podcast interviews, media requests, and business opportunities.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@400;500;600;700;800;900&family=Quicksand:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --bg:#0C0C0C;--bg-card:#131313;--border:#1C1C1C;
+  --amber:#D4842A;--amber-bright:#E8963A;
+  --white:#FFFFFF;--text-high:#F0EEEA;--text-body:#D5D2CC;
+  --text-mid:#9A958D;--text-low:#5A5650;
+  --sidebar-w:280px;
+}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text-body);font-family:'Quicksand',sans-serif;font-size:18px;font-weight:400;line-height:1.5;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
+a{color:var(--amber);text-decoration:none;transition:color .2s}
+a:hover{color:var(--amber-bright)}
+img{display:block;max-width:100%}
+
+/* ── SIDEBAR ── */
+.sidebar{position:fixed;top:0;left:0;width:var(--sidebar-w);height:100vh;background:var(--bg);border-right:1px solid var(--border);padding:48px 32px 32px;display:flex;flex-direction:column;overflow-y:auto;z-index:100}
+.sidebar-logo{margin-bottom:48px}
+.sidebar-logo a{color:inherit;text-decoration:none}
+.name-mike{font-family:'Bebas Neue',sans-serif;font-size:52px;font-weight:400;color:var(--white);letter-spacing:2px;line-height:1}
+.name-warren{font-family:'Bebas Neue',sans-serif;font-size:52px;font-weight:400;color:var(--white);letter-spacing:2px;line-height:1;border:2px solid var(--white);display:inline-block;padding:2px 12px 0;margin-top:4px}
+.nav-section{margin-bottom:28px}
+.nav-section-title{font-family:'Montserrat',sans-serif;font-weight:800;font-size:14px;color:var(--amber);text-transform:uppercase;letter-spacing:2px;margin-bottom:12px}
+.nav-link{display:block;font-family:'Montserrat',sans-serif;font-weight:400;font-size:15px;color:var(--text-mid);padding:6px 0 6px 16px;transition:color .2s,padding-left .2s;position:relative}
+.nav-link::before{content:'\25B8';position:absolute;left:0;color:var(--text-low);font-size:10px;top:50%;transform:translateY(-50%);transition:color .2s}
+.nav-link:hover{color:var(--text-high);padding-left:20px}
+.nav-link:hover::before{color:var(--amber)}
+.nav-link.active{color:var(--amber)}
+.nav-link.active::before{color:var(--amber)}
+.sidebar-footer{margin-top:auto;padding-top:32px}
+.social-icons{display:flex;gap:16px;margin-bottom:20px}
+.social-icons a{color:var(--text-low);font-family:'Montserrat',sans-serif;font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:1px;transition:color .2s}
+.social-icons a:hover{color:var(--amber)}
+.sidebar-copyright{font-family:'Montserrat',sans-serif;font-size:12px;font-weight:400;color:var(--text-low);opacity:.4;line-height:1.8}
+.sidebar-copyright a{color:var(--text-low);opacity:1}
+
+/* ── MOBILE NAV ── */
+.mobile-header{display:none;position:fixed;top:0;left:0;right:0;height:60px;background:var(--bg);border-bottom:1px solid var(--border);z-index:200;align-items:center;justify-content:space-between;padding:0 20px}
+.mobile-logo{font-family:'Bebas Neue',sans-serif;font-size:28px;color:var(--white);letter-spacing:2px}
+.mobile-logo a{color:var(--white);text-decoration:none}
+.hamburger{background:none;border:none;cursor:pointer;padding:8px}
+.hamburger span{display:block;width:24px;height:2px;background:var(--white);margin:5px 0;transition:all .3s}
+.sidebar-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:99}
+
+/* ── MAIN CONTENT ── */
+.page-wrapper{display:flex;min-height:100vh}
+.main-content{margin-left:var(--sidebar-w);flex:1;max-width:960px;padding:0 60px}
+
+/* ── PAGE HEADER ── */
+.page-header{padding:60px 0 40px}
+.page-eyebrow{font-family:'Montserrat',sans-serif;font-weight:600;font-size:13px;color:var(--amber);text-transform:uppercase;letter-spacing:3px;margin-bottom:16px}
+.page-title{font-family:'Montserrat',sans-serif;font-weight:900;font-size:42px;color:var(--white);line-height:1.15;margin-bottom:16px}
+.page-subtitle{font-family:'Quicksand',sans-serif;font-size:18px;color:var(--text-body);line-height:1.7;max-width:640px}
+
+/* ── CONTACT FORM ── */
+.contact-section{padding:40px 0 60px;border-top:1px solid var(--border)}
+.contact-card{background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:40px 36px;max-width:640px}
+.contact-card h2{font-family:'Montserrat',sans-serif;font-weight:900;font-size:26px;color:var(--white);margin-bottom:8px}
+.contact-card .contact-sub{font-size:15px;color:var(--text-mid);margin-bottom:28px;line-height:1.6}
+.form-row{display:flex;gap:16px;margin-bottom:16px}
+.form-row.full{flex-direction:column}
+.form-field{flex:1;display:flex;flex-direction:column}
+.form-field label{font-family:'Montserrat',sans-serif;font-weight:600;font-size:13px;color:var(--text-mid);text-transform:uppercase;letter-spacing:1px;margin-bottom:6px}
+.form-field input,.form-field textarea,.form-field select{background:var(--bg);border:1px solid var(--border);border-radius:4px;color:var(--text-high);font-family:'Quicksand',sans-serif;font-size:15px;padding:12px 14px;transition:border-color .2s;outline:none;width:100%}
+.form-field input:focus,.form-field textarea:focus,.form-field select:focus{border-color:var(--amber)}
+.form-field textarea{resize:vertical;min-height:120px}
+.form-field select{appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%239A958D' fill='none' stroke-width='1.5'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center;padding-right:36px}
+.form-field select option{background:var(--bg-card);color:var(--text-high)}
+.btn-primary{display:inline-block;font-family:'Montserrat',sans-serif;font-weight:800;font-size:16px;color:var(--bg);background:var(--amber);border:none;border-radius:4px;padding:14px 36px;cursor:pointer;transition:background .2s;text-transform:uppercase;letter-spacing:1px;margin-top:8px}
+.btn-primary:hover{background:var(--amber-bright);color:var(--bg)}
+
+/* ── QUICK LINKS ── */
+.quick-links{margin-top:48px;padding-top:40px;border-top:1px solid var(--border)}
+.quick-links h3{font-family:'Montserrat',sans-serif;font-weight:900;font-size:20px;color:var(--white);margin-bottom:20px}
+.quick-links-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.quick-link-card{background:var(--bg-card);border:1px solid var(--border);border-radius:6px;padding:20px;transition:border-color .3s}
+.quick-link-card:hover{border-color:var(--amber)}
+.quick-link-card h4{font-family:'Montserrat',sans-serif;font-weight:700;font-size:15px;color:var(--white);margin-bottom:6px}
+.quick-link-card p{font-size:14px;color:var(--text-mid);line-height:1.5;margin-bottom:10px}
+.quick-link-card a{font-family:'Montserrat',sans-serif;font-weight:700;font-size:12px;text-transform:uppercase;letter-spacing:1px}
+.quick-link-card a::after{content:' \2192'}
+
+/* ── FOOTER ── */
+.main-footer{padding:40px 0 60px;border-top:1px solid var(--border)}
+.main-footer p{font-family:'Montserrat',sans-serif;font-size:13px;font-weight:400;color:var(--text-low);opacity:.4}
+.main-footer a{color:var(--text-low)}
+
+/* ── RESPONSIVE ── */
+@media(max-width:900px){
+  .mobile-header{display:flex}
+  .sidebar{transform:translateX(-100%);transition:transform .3s ease;z-index:200;width:280px}
+  .sidebar.open{transform:translateX(0)}
+  .sidebar-overlay.open{display:block}
+  .main-content{margin-left:0;padding:80px 24px 40px;max-width:100%}
+  .page-title{font-size:32px}
+  .contact-card{padding:28px 24px}
+  .form-row{flex-direction:column}
+  .quick-links-grid{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<!-- Mobile Header -->
+<div class="mobile-header">
+  <span class="mobile-logo"><a href="index.html">MIKE WARREN</a></span>
+  <button class="hamburger" onclick="toggleSidebar()" aria-label="Menu"><span></span><span></span><span></span></button>
+</div>
+<div class="sidebar-overlay" onclick="toggleSidebar()"></div>
+
+<div class="page-wrapper">
+
+<!-- Sidebar -->
+<nav class="sidebar">
+  <div class="sidebar-logo">
+    <a href="index.html">
+      <div class="name-mike">MIKE</div>
+      <div class="name-warren">WARREN</div>
+    </a>
+  </div>
+  <div class="nav-section">
+    <div class="nav-section-title">About Mike</div>
+    <a href="my-story.html" class="nav-link">My Story</a>
+    <a href="books.html" class="nav-link">Mike's Books</a>
+    <a href="public-speaking.html" class="nav-link">Public Speaking</a>
+    <a href="press-media.html" class="nav-link">Press &amp; Media</a>
+    <a href="give-back.html" class="nav-link">Give Back</a>
+  </div>
+  <div class="nav-section">
+    <div class="nav-section-title">What I've Built</div>
+    <a href="what-ive-built.html#software" class="nav-link">Software</a>
+    <a href="what-ive-built.html#acquisitions" class="nav-link">Business Acquisitions</a>
+    <a href="what-ive-built.html#realestate" class="nav-link">Real Estate &amp; Alt. Investing</a>
+  </div>
+  <div class="nav-section">
+    <div class="nav-section-title">My Content</div>
+    <a href="buyers-brief.html" class="nav-link">The Buyer's Brief</a>
+    <a href="watch.html" class="nav-link">Watch</a>
+  </div>
+  <div class="sidebar-footer">
+    <div class="social-icons">
+      <a href="https://instagram.com/themikewarren" target="_blank">IG</a>
+      <a href="https://linkedin.com/in/themikewarren" target="_blank">LI</a>
+      <a href="https://youtube.com/@themikewarren" target="_blank">YT</a>
+      <a href="https://x.com/themikewarren" target="_blank">X</a>
+    </div>
+    <div class="sidebar-copyright">themikewarren.com &copy; 2026<br>All Rights Reserved<br><a href="contact.html">Contact</a> · <a href="#">Terms &amp; Conditions</a></div>
+  </div>
+</nav>
+
+<!-- Main Content -->
+<main class="main-content">
+
+  <section class="page-header">
+    <div class="page-eyebrow">Get In Touch</div>
+    <h1 class="page-title">Contact</h1>
+    <p class="page-subtitle">Whether it's a podcast interview, speaking engagement, media feature, or business opportunity — Mike's team responds within 48 hours.</p>
+  </section>
+
+  <section class="contact-section">
+    <div class="contact-card">
+      <h2>Send a Message</h2>
+      <p class="contact-sub">Select what your inquiry is about and we'll route it to the right person.</p>
+      <form id="contactForm" action="https://formspree.io/f/mgoplndn" method="POST">
+        <input type="hidden" name="_subject" value="New Contact from themikewarren.com">
+        <input type="hidden" name="_next" value="https://themikewarren.vercel.app/contact.html?sent=true">
+        <div class="form-row">
+          <div class="form-field">
+            <label for="fname">First Name</label>
+            <input type="text" id="fname" name="fname" required>
+          </div>
+          <div class="form-field">
+            <label for="lname">Last Name</label>
+            <input type="text" id="lname" name="lname" required>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-field">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required>
+          </div>
+          <div class="form-field">
+            <label for="phone">Phone (optional)</label>
+            <input type="tel" id="phone" name="phone">
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-field">
+            <label for="inquiry">What's This About?</label>
+            <select id="inquiry" name="inquiry" required>
+              <option value="">Select inquiry type...</option>
+              <option value="speaking">Speaking Engagement</option>
+              <option value="podcast">Podcast / Interview</option>
+              <option value="media">Media / Press Inquiry</option>
+              <option value="business">Business Opportunity</option>
+              <option value="partnership">Partnership / Collaboration</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-field">
+            <label for="org">Organization / Company (optional)</label>
+            <input type="text" id="org" name="org">
+          </div>
+        </div>
+        <div class="form-row full">
+          <div class="form-field">
+            <label for="message">Your Message</label>
+            <textarea id="message" name="message" placeholder="Tell us about your inquiry, timeline, and how Mike can help." required></textarea>
+          </div>
+        </div>
+        <button type="submit" class="btn-primary">Send Message</button>
+      </form>
+      <div id="contactSuccess" style="display:none;padding:24px 0;text-align:center">
+        <p style="font-family:'Montserrat',sans-serif;font-weight:700;font-size:20px;color:var(--amber);margin-bottom:8px">Message Sent</p>
+        <p style="color:var(--text-body)">Thank you for reaching out. Mike's team will respond within 48 hours.</p>
+      </div>
+    </div>
+
+    <!-- Quick Links -->
+    <div class="quick-links">
+      <h3>Looking for Something Specific?</h3>
+      <div class="quick-links-grid">
+        <div class="quick-link-card">
+          <h4>Book Mike to Speak</h4>
+          <p>Keynotes, workshops, and corporate training on business acquisition and alternative investing.</p>
+          <a href="public-speaking.html">Speaking Page</a>
+        </div>
+        <div class="quick-link-card">
+          <h4>Learn to Buy a Business</h4>
+          <p>Watch the free 25-minute training on the 80/10/10 Bulletproof Acquisition Framework.</p>
+          <a href="https://bizbuyempire.com/masterclass-opt-in" target="_blank">Free Training</a>
+        </div>
+        <div class="quick-link-card">
+          <h4>Subscribe to The Buyer's Brief</h4>
+          <p>Real deal breakdowns and acquisition strategies, delivered 3x per week. Free.</p>
+          <a href="buyers-brief.html">Subscribe</a>
+        </div>
+        <div class="quick-link-card">
+          <h4>Try DealScore Pro</h4>
+          <p>Score any business deal with the Bulletproof framework. Free calculator, no account required.</p>
+          <a href="https://dealscorepro.net" target="_blank">DealScore Pro</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="main-footer">
+    <p>themikewarren.com &copy; 2026 / All Rights Reserved / <a href="#">Terms &amp; Conditions</a></p>
+  </footer>
+
+</main>
+</div>
+
+<script>
+function toggleSidebar(){
+  document.querySelector('.sidebar').classList.toggle('open');
+  document.querySelector('.sidebar-overlay').classList.toggle('open');
+}
+// Show success message if redirected back from Formspree
+if(window.location.search.includes('sent=true')){
+  var f=document.getElementById('contactForm');
+  var s=document.getElementById('contactSuccess');
+  if(f)f.style.display='none';
+  if(s)s.style.display='block';
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Watch — Mike Warren</title>
+<meta name="description" content="Watch Mike Warren break down real deals, share acquisition strategies, and teach from 35 years of experience.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@400;500;600;700;800;900&family=Quicksand:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --bg:#0C0C0C;--bg-card:#131313;--border:#1C1C1C;
+  --amber:#D4842A;--amber-bright:#E8963A;
+  --white:#FFFFFF;--text-high:#F0EEEA;--text-body:#D5D2CC;
+  --text-mid:#9A958D;--text-low:#5A5650;
+  --sidebar-w:280px;
+}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text-body);font-family:'Quicksand',sans-serif;font-size:18px;font-weight:400;line-height:1.5;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
+a{color:var(--amber);text-decoration:none;transition:color .2s}
+a:hover{color:var(--amber-bright)}
+img{display:block;max-width:100%}
+
+/* ── SIDEBAR ── */
+.sidebar{position:fixed;top:0;left:0;width:var(--sidebar-w);height:100vh;background:var(--bg);border-right:1px solid var(--border);padding:48px 32px 32px;display:flex;flex-direction:column;overflow-y:auto;z-index:100}
+.sidebar-logo{margin-bottom:48px}
+.sidebar-logo a{color:inherit;text-decoration:none}
+.name-mike{font-family:'Bebas Neue',sans-serif;font-size:52px;font-weight:400;color:var(--white);letter-spacing:2px;line-height:1}
+.name-warren{font-family:'Bebas Neue',sans-serif;font-size:52px;font-weight:400;color:var(--white);letter-spacing:2px;line-height:1;border:2px solid var(--white);display:inline-block;padding:2px 12px 0;margin-top:4px}
+.nav-section{margin-bottom:28px}
+.nav-section-title{font-family:'Montserrat',sans-serif;font-weight:800;font-size:14px;color:var(--amber);text-transform:uppercase;letter-spacing:2px;margin-bottom:12px}
+.nav-link{display:block;font-family:'Montserrat',sans-serif;font-weight:400;font-size:15px;color:var(--text-mid);padding:6px 0 6px 16px;transition:color .2s,padding-left .2s;position:relative}
+.nav-link::before{content:'\25B8';position:absolute;left:0;color:var(--text-low);font-size:10px;top:50%;transform:translateY(-50%);transition:color .2s}
+.nav-link:hover{color:var(--text-high);padding-left:20px}
+.nav-link:hover::before{color:var(--amber)}
+.nav-link.active{color:var(--amber)}
+.nav-link.active::before{color:var(--amber)}
+.sidebar-footer{margin-top:auto;padding-top:32px}
+.social-icons{display:flex;gap:16px;margin-bottom:20px}
+.social-icons a{color:var(--text-low);font-family:'Montserrat',sans-serif;font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:1px;transition:color .2s}
+.social-icons a:hover{color:var(--amber)}
+.sidebar-copyright{font-family:'Montserrat',sans-serif;font-size:12px;font-weight:400;color:var(--text-low);opacity:.4;line-height:1.8}
+.sidebar-copyright a{color:var(--text-low);opacity:1}
+
+/* ── MOBILE NAV ── */
+.mobile-header{display:none;position:fixed;top:0;left:0;right:0;height:60px;background:var(--bg);border-bottom:1px solid var(--border);z-index:200;align-items:center;justify-content:space-between;padding:0 20px}
+.mobile-logo{font-family:'Bebas Neue',sans-serif;font-size:28px;color:var(--white);letter-spacing:2px}
+.mobile-logo a{color:var(--white);text-decoration:none}
+.hamburger{background:none;border:none;cursor:pointer;padding:8px}
+.hamburger span{display:block;width:24px;height:2px;background:var(--white);margin:5px 0;transition:all .3s}
+.sidebar-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:99}
+
+/* ── MAIN CONTENT ── */
+.page-wrapper{display:flex;min-height:100vh}
+.main-content{margin-left:var(--sidebar-w);flex:1;max-width:960px;padding:0 60px}
+
+/* ── PAGE HEADER ── */
+.page-header{padding:60px 0 40px}
+.page-eyebrow{font-family:'Montserrat',sans-serif;font-weight:600;font-size:13px;color:var(--amber);text-transform:uppercase;letter-spacing:3px;margin-bottom:16px}
+.page-title{font-family:'Montserrat',sans-serif;font-weight:900;font-size:42px;color:var(--white);line-height:1.15;margin-bottom:16px}
+.page-subtitle{font-family:'Quicksand',sans-serif;font-size:18px;color:var(--text-body);line-height:1.7;max-width:640px}
+
+/* ── SECTIONS ── */
+.section{padding:48px 0;border-top:1px solid var(--border)}
+.section-heading{font-family:'Montserrat',sans-serif;font-weight:900;font-size:28px;color:var(--white);margin-bottom:24px;line-height:1.2}
+
+/* ── HERO VIDEO ── */
+.hero-video{margin-bottom:48px;border-top:1px solid var(--border);padding-top:40px}
+.hero-video-label{font-family:'Space Mono',monospace;font-size:11px;color:var(--amber);text-transform:uppercase;letter-spacing:1.5px;margin-bottom:16px}
+.video-wrapper{position:relative;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:6px;background:#000}
+.video-wrapper iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:none}
+
+/* ── VIDEO GRID ── */
+.video-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:20px;margin-bottom:32px}
+.video-card{background:var(--bg-card);border:1px solid var(--border);border-radius:6px;overflow:hidden;transition:border-color .3s}
+.video-card:hover{border-color:#2a2a2a}
+.video-card .video-wrapper{border-radius:0}
+.video-card-body{padding:14px 16px}
+.video-card-title{font-family:'Montserrat',sans-serif;font-weight:700;font-size:13px;color:var(--text-high);line-height:1.4}
+
+/* ── PLATFORM LINKS ── */
+.platforms-section{padding:48px 0;border-top:1px solid var(--border)}
+.platforms-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:16px}
+.platform-link{display:flex;flex-direction:column;align-items:center;gap:10px;padding:24px 16px;background:var(--bg-card);border:1px solid var(--border);border-radius:6px;transition:border-color .3s,transform .2s;text-align:center}
+.platform-link:hover{border-color:var(--amber);transform:translateY(-2px)}
+.platform-icon{font-size:28px}
+.platform-name{font-family:'Montserrat',sans-serif;font-weight:800;font-size:14px;color:var(--white)}
+.platform-handle{font-family:'Space Mono',monospace;font-size:11px;color:var(--text-mid)}
+
+/* ── CHANNEL CTA ── */
+.channel-cta{display:inline-block;margin-top:24px;font-family:'Montserrat',sans-serif;font-weight:800;font-size:14px;color:var(--bg);background:var(--amber);border-radius:4px;padding:12px 28px;text-transform:uppercase;letter-spacing:1px;transition:background .2s}
+.channel-cta:hover{background:var(--amber-bright);color:var(--bg)}
+
+/* ── FOOTER ── */
+.main-footer{padding:40px 0 60px;border-top:1px solid var(--border)}
+.main-footer p{font-family:'Montserrat',sans-serif;font-size:13px;font-weight:400;color:var(--text-low);opacity:.4}
+.main-footer a{color:var(--text-low)}
+
+/* ── RESPONSIVE ── */
+@media(max-width:900px){
+  .mobile-header{display:flex}
+  .sidebar{transform:translateX(-100%);transition:transform .3s ease;z-index:200;width:280px}
+  .sidebar.open{transform:translateX(0)}
+  .sidebar-overlay.open{display:block}
+  .main-content{margin-left:0;padding:80px 24px 40px;max-width:100%}
+  .page-title{font-size:32px}
+  .video-grid{grid-template-columns:1fr 1fr}
+  .platforms-grid{grid-template-columns:repeat(3,1fr)}
+}
+@media(max-width:500px){
+  .video-grid{grid-template-columns:1fr}
+  .platforms-grid{grid-template-columns:1fr 1fr}
+}
+</style>
+</head>
+<body>
+
+<!-- Mobile Header -->
+<div class="mobile-header">
+  <span class="mobile-logo"><a href="index.html">MIKE WARREN</a></span>
+  <button class="hamburger" onclick="toggleSidebar()" aria-label="Menu"><span></span><span></span><span></span></button>
+</div>
+<div class="sidebar-overlay" onclick="toggleSidebar()"></div>
+
+<div class="page-wrapper">
+
+<!-- Sidebar -->
+<nav class="sidebar">
+  <div class="sidebar-logo">
+    <a href="index.html">
+      <div class="name-mike">MIKE</div>
+      <div class="name-warren">WARREN</div>
+    </a>
+  </div>
+  <div class="nav-section">
+    <div class="nav-section-title">About Mike</div>
+    <a href="my-story.html" class="nav-link">My Story</a>
+    <a href="books.html" class="nav-link">Mike's Books</a>
+    <a href="public-speaking.html" class="nav-link">Public Speaking</a>
+    <a href="press-media.html" class="nav-link">Press &amp; Media</a>
+    <a href="give-back.html" class="nav-link">Give Back</a>
+  </div>
+  <div class="nav-section">
+    <div class="nav-section-title">What I've Built</div>
+    <a href="what-ive-built.html#software" class="nav-link">Software</a>
+    <a href="what-ive-built.html#acquisitions" class="nav-link">Business Acquisitions</a>
+    <a href="what-ive-built.html#realestate" class="nav-link">Real Estate &amp; Alt. Investing</a>
+  </div>
+  <div class="nav-section">
+    <div class="nav-section-title">My Content</div>
+    <a href="buyers-brief.html" class="nav-link">The Buyer's Brief</a>
+    <a href="watch.html" class="nav-link active">Watch</a>
+  </div>
+  <div class="sidebar-footer">
+    <div class="social-icons">
+      <a href="https://instagram.com/themikewarren" target="_blank">IG</a>
+      <a href="https://linkedin.com/in/themikewarren" target="_blank">LI</a>
+      <a href="https://youtube.com/@themikewarren" target="_blank">YT</a>
+      <a href="https://x.com/themikewarren" target="_blank">X</a>
+    </div>
+    <div class="sidebar-copyright">themikewarren.com &copy; 2026<br>All Rights Reserved<br><a href="#">Terms &amp; Conditions</a></div>
+  </div>
+</nav>
+
+<!-- Main Content -->
+<main class="main-content">
+
+  <section class="page-header">
+    <div class="page-eyebrow">My Content</div>
+    <h1 class="page-title">Watch</h1>
+    <p class="page-subtitle">Deal breakdowns, acquisition strategies, and lessons from 35 years of dealmaking. New videos every week across YouTube, Instagram, TikTok, and LinkedIn.</p>
+  </section>
+
+  <!-- Hero Video -->
+  <div class="hero-video">
+    <div class="hero-video-label">Featured</div>
+    <div class="video-wrapper">
+      <iframe src="https://www.youtube.com/embed/ljnxkJAOpFk" title="Featured Video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+    </div>
+    <p style="font-family:'Montserrat',sans-serif;font-weight:800;font-size:18px;color:var(--white);margin-top:16px">Introduction to Business Flipping: Buy, Fix, Sell for Profit</p>
+  </div>
+
+  <!-- More Videos -->
+  <section class="section">
+    <h2 class="section-heading">More From Mike</h2>
+    <div class="video-grid">
+
+      <div class="video-card">
+        <div class="video-wrapper">
+          <iframe src="https://www.youtube.com/embed/Tm8QQA3j3OU" title="Video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+        </div>
+        <div class="video-card-body"><div class="video-card-title">Mike Warren Live: Teaching Judgment Options at Mega Partnering</div></div>
+      </div>
+
+      <div class="video-card">
+        <div class="video-wrapper">
+          <iframe src="https://www.youtube.com/embed/iTQ5Cu_yY4s" title="Video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+        </div>
+        <div class="video-card-body"><div class="video-card-title">Kevin Harrington on Buying Businesses at Business Mastery Boot Camp</div></div>
+      </div>
+
+      <div class="video-card">
+        <div class="video-wrapper">
+          <iframe src="https://www.youtube.com/embed/5xX0ieJxoXw" title="Video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+        </div>
+        <div class="video-card-body"><div class="video-card-title">Buying a Business No Money Down: Testimonial and Case Study</div></div>
+      </div>
+
+      <div class="video-card">
+        <div class="video-wrapper">
+          <iframe src="https://www.youtube.com/embed/LJaBWqmLVDo" title="Video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+        </div>
+        <div class="video-card-body"><div class="video-card-title">How to Buy Your First Business Using OPM</div></div>
+      </div>
+
+      <div class="video-card">
+        <div class="video-wrapper">
+          <iframe src="https://www.youtube.com/embed/qeubsJRzBZ4" title="Video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+        </div>
+        <div class="video-card-body"><div class="video-card-title">How to Grow Your Business Through an IPO or Reverse Merger</div></div>
+      </div>
+
+      <div class="video-card">
+        <div class="video-wrapper">
+          <iframe src="https://www.youtube.com/embed/YfKn9UX35T4" title="Video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+        </div>
+        <div class="video-card-body"><div class="video-card-title">We Structured a $3M E-Commerce Business With $0 of Our Own Money</div></div>
+      </div>
+
+      <div class="video-card">
+        <div class="video-wrapper">
+          <iframe src="https://www.youtube.com/embed/nBKBoci4hms" title="Video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+        </div>
+        <div class="video-card-body"><div class="video-card-title">2 Ways to Buy a Business With No Money Down</div></div>
+      </div>
+
+      <div class="video-card">
+        <div class="video-wrapper">
+          <iframe src="https://www.youtube.com/embed/94cdsgCo1Xo" title="Video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+        </div>
+        <div class="video-card-body"><div class="video-card-title">How to Double Your Income in 6 Months While Working 50% Less</div></div>
+      </div>
+
+      <div class="video-card">
+        <div class="video-wrapper">
+          <iframe src="https://www.youtube.com/embed/8_TFvp_eIpk" title="Video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+        </div>
+        <div class="video-card-body"><div class="video-card-title">Partnering for Growth: Business Acquisitions</div></div>
+      </div>
+
+    </div>
+    <a class="channel-cta" href="https://youtube.com/@themikewarren" target="_blank">Subscribe on YouTube</a>
+  </section>
+
+  <!-- Follow Everywhere -->
+  <section class="platforms-section">
+    <h2 class="section-heading">Follow Everywhere</h2>
+    <div class="platforms-grid">
+      <a class="platform-link" href="https://youtube.com/@themikewarren" target="_blank">
+        <div class="platform-icon"><svg width="32" height="32" viewBox="0 0 24 24" fill="#FF0000"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></div>
+        <div class="platform-name">YouTube</div>
+        <div class="platform-handle">@themikewarren</div>
+      </a>
+      <a class="platform-link" href="https://instagram.com/themikewarren" target="_blank">
+        <div class="platform-icon"><svg width="32" height="32" viewBox="0 0 24 24" fill="url(#ig-gradient)"><defs><radialGradient id="ig-gradient" cx="30%" cy="107%" r="150%"><stop offset="0%" stop-color="#fdf497"/><stop offset="5%" stop-color="#fdf497"/><stop offset="45%" stop-color="#fd5949"/><stop offset="60%" stop-color="#d6249f"/><stop offset="90%" stop-color="#285AEB"/></radialGradient></defs><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg></div>
+        <div class="platform-name">Instagram</div>
+        <div class="platform-handle">@themikewarren</div>
+      </a>
+      <a class="platform-link" href="https://tiktok.com/@mikewarrenofficial" target="_blank">
+        <div class="platform-icon"><svg width="32" height="32" viewBox="0 0 24 24" fill="var(--white)"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.27 6.27 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.34-6.34V8.75a8.18 8.18 0 0 0 4.76 1.52V6.84a4.84 4.84 0 0 1-1-.15z"/></svg></div>
+        <div class="platform-name">TikTok</div>
+        <div class="platform-handle">@mikewarrenofficial</div>
+      </a>
+      <a class="platform-link" href="https://linkedin.com/in/themikewarren" target="_blank">
+        <div class="platform-icon"><svg width="32" height="32" viewBox="0 0 24 24" fill="#0A66C2"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></div>
+        <div class="platform-name">LinkedIn</div>
+        <div class="platform-handle">themikewarren</div>
+      </a>
+      <a class="platform-link" href="https://x.com/themikewarren" target="_blank">
+        <div class="platform-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="var(--white)"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></div>
+        <div class="platform-name">X</div>
+        <div class="platform-handle">@themikewarren</div>
+      </a>
+    </div>
+  </section>
+
+  <footer class="main-footer">
+    <p>themikewarren.com &copy; 2026 / All Rights Reserved / <a href="#">Terms &amp; Conditions</a></p>
+  </footer>
+
+</main>
+</div>
+
+<script>
+function toggleSidebar(){
+  document.querySelector('.sidebar').classList.toggle('open');
+  document.querySelector('.sidebar-overlay').classList.toggle('open');
+}
+</script>
+</body>
+</html>

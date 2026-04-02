@@ -167,6 +167,14 @@ img { display: block; max-width: 100%; }
 }
 .text-link:hover { color: var(--amber-bright); }
 .text-link::after { content: '\2192'; }
+.testimonials { padding: 60px 0; border-top: 1px solid var(--border); }
+.testimonials-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+.testimonial-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 6px; padding: 28px 24px; }
+.testimonial-quote { font-family: 'Quicksand', sans-serif; font-size: 16px; color: var(--text-high); line-height: 1.7; font-style: italic; margin-bottom: 16px; }
+.testimonial-quote::before { content: '\201C'; font-size: 32px; color: var(--amber); line-height: 0; vertical-align: -12px; margin-right: 4px; }
+.testimonial-author { font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 14px; color: var(--white); }
+.testimonial-detail { font-family: 'Space Mono', monospace; font-size: 11px; color: var(--amber); text-transform: uppercase; letter-spacing: 1px; margin-top: 4px; }
+.testimonials-note { font-family: 'Montserrat', sans-serif; font-size: 11px; color: var(--text-low); margin-top: 20px; font-style: italic; }
 .articles { padding: 60px 0; border-top: 1px solid var(--border); }
 .article-item {
   padding: 24px 0; border-bottom: 1px solid var(--border);
@@ -238,6 +246,7 @@ img { display: block; max-width: 100%; }
   .lifestyle-grid img { height: 180px; }
   .newsletter-form { flex-direction: column; }
   .article-item { flex-direction: column; gap: 6px; }
+  .testimonials-grid { grid-template-columns: 1fr; }
   .section-heading { font-size: 28px; }
   .pull-quote blockquote { font-size: 20px; }
 }
@@ -269,9 +278,7 @@ img { display: block; max-width: 100%; }
   <div class="nav-section">
     <div class="nav-section-title">My Content</div>
     <a href="buyers-brief.html" class="nav-link">The Buyer's Brief</a>
-    <a href="youtube.html" class="nav-link">YouTube Channels</a>
-    <a href="articles.html" class="nav-link">Articles</a>
-    <a href="socials.html" class="nav-link">Socials</a>
+    <a href="watch.html" class="nav-link">Watch</a>
   </div>
   <div class="sidebar-footer">
     <div class="social-icons">
@@ -350,6 +357,51 @@ img { display: block; max-width: 100%; }
     <p>The Bulletproof Methodology isn't theory. It's a set of non-negotiable financial criteria refined across thousands of real transactions. Every deal must pass a stress test before a dollar changes hands. Debt coverage, working capital, earnings multiples, and cash flow floors, all verified, all documented, all designed to protect the buyer from day one.</p>
     <a href="my-story.html" class="text-link">Read My Full Story</a>
   </section>
+
+  <section class="testimonials">
+    <h2 class="section-heading">What People Are Saying</h2>
+    <div class="testimonials-grid">
+
+      <div class="testimonial-card">
+        <div class="testimonial-quote">I quit my 9-to-5, ran across Mike's webinar, bought the material, learned what I could and went for it. Today I own a boutique with no money down and seller financing.</div>
+        <div class="testimonial-author">Marketa M.</div>
+        <div class="testimonial-detail">Retail Business Owner</div>
+      </div>
+
+      <div class="testimonial-card">
+        <div class="testimonial-quote">Less than a month in. The content so far is amazing. I can already see how the framework changes the way you look at every deal.</div>
+        <div class="testimonial-author">Josh K.</div>
+        <div class="testimonial-detail">BizBuyEmpire Client</div>
+      </div>
+
+      <div class="testimonial-card">
+        <div class="testimonial-quote">We acquired a business out of the U.K. with none of our own money. The seller walked away happy, and we own 100% of the company. Mike's deal structure made it possible.</div>
+        <div class="testimonial-author">Kevin D.</div>
+        <div class="testimonial-detail">Healthcare Industry Acquisition</div>
+      </div>
+
+      <div class="testimonial-card">
+        <div class="testimonial-quote">Mike's methodology changed how I evaluate every opportunity. The Bulletproof framework saved me from two deals that looked great on the surface but would have been disasters.</div>
+        <div class="testimonial-author">Mehran A.</div>
+        <div class="testimonial-detail">Business Acquisition Client</div>
+      </div>
+
+      <div class="testimonial-card">
+        <div class="testimonial-quote">The broker and seller reached out because our offer was structured right. Mike's training on seller financing and deal structure is what made the difference.</div>
+        <div class="testimonial-author">Alex R.</div>
+        <div class="testimonial-detail">Multiple Acquisitions Completed</div>
+      </div>
+
+      <div class="testimonial-card">
+        <div class="testimonial-quote">Mike doesn't just teach theory. He showed me exactly how to structure the deal, negotiate seller financing, and get it to the closing table. This is the real deal.</div>
+        <div class="testimonial-author">Flint H.</div>
+        <div class="testimonial-detail">SBA-Financed Acquisition</div>
+      </div>
+
+    </div>
+    <p class="testimonials-note">Results vary. Individual outcomes depend on effort, deal quality, market conditions, and financing approval. These testimonials represent individual experiences.</p>
+  </section>
+
   <section class="articles">
     <h2 class="section-heading">Latest Articles</h2>
     <div class="article-item">

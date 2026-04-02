@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Buyer's Brief — Mike Warren</title>
+<meta name="description" content="The Buyer's Brief by Mike Warren. Real deal breakdowns, market analysis, and acquisition strategies — 3x per week, free.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@400;500;600;700;800;900&family=Quicksand:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --bg:#0C0C0C;--bg-card:#131313;--border:#1C1C1C;
+  --amber:#D4842A;--amber-bright:#E8963A;
+  --white:#FFFFFF;--text-high:#F0EEEA;--text-body:#D5D2CC;
+  --text-mid:#9A958D;--text-low:#5A5650;
+  --sidebar-w:280px;
+}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text-body);font-family:'Quicksand',sans-serif;font-size:18px;font-weight:400;line-height:1.5;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
+a{color:var(--amber);text-decoration:none;transition:color .2s}
+a:hover{color:var(--amber-bright)}
+img{display:block;max-width:100%}
+
+/* ── SIDEBAR ── */
+.sidebar{position:fixed;top:0;left:0;width:var(--sidebar-w);height:100vh;background:var(--bg);border-right:1px solid var(--border);padding:48px 32px 32px;display:flex;flex-direction:column;overflow-y:auto;z-index:100}
+.sidebar-logo{margin-bottom:48px}
+.sidebar-logo a{color:inherit;text-decoration:none}
+.name-mike{font-family:'Bebas Neue',sans-serif;font-size:52px;font-weight:400;color:var(--white);letter-spacing:2px;line-height:1}
+.name-warren{font-family:'Bebas Neue',sans-serif;font-size:52px;font-weight:400;color:var(--white);letter-spacing:2px;line-height:1;border:2px solid var(--white);display:inline-block;padding:2px 12px 0;margin-top:4px}
+.nav-section{margin-bottom:28px}
+.nav-section-title{font-family:'Montserrat',sans-serif;font-weight:800;font-size:14px;color:var(--amber);text-transform:uppercase;letter-spacing:2px;margin-bottom:12px}
+.nav-link{display:block;font-family:'Montserrat',sans-serif;font-weight:400;font-size:15px;color:var(--text-mid);padding:6px 0 6px 16px;transition:color .2s,padding-left .2s;position:relative}
+.nav-link::before{content:'\25B8';position:absolute;left:0;color:var(--text-low);font-size:10px;top:50%;transform:translateY(-50%);transition:color .2s}
+.nav-link:hover{color:var(--text-high);padding-left:20px}
+.nav-link:hover::before{color:var(--amber)}
+.nav-link.active{color:var(--amber)}
+.nav-link.active::before{color:var(--amber)}
+.sidebar-footer{margin-top:auto;padding-top:32px}
+.social-icons{display:flex;gap:16px;margin-bottom:20px}
+.social-icons a{color:var(--text-low);font-family:'Montserrat',sans-serif;font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:1px;transition:color .2s}
+.social-icons a:hover{color:var(--amber)}
+.sidebar-copyright{font-family:'Montserrat',sans-serif;font-size:12px;font-weight:400;color:var(--text-low);opacity:.4;line-height:1.8}
+.sidebar-copyright a{color:var(--text-low);opacity:1}
+
+/* ── MOBILE NAV ── */
+.mobile-header{display:none;position:fixed;top:0;left:0;right:0;height:60px;background:var(--bg);border-bottom:1px solid var(--border);z-index:200;align-items:center;justify-content:space-between;padding:0 20px}
+.mobile-logo{font-family:'Bebas Neue',sans-serif;font-size:28px;color:var(--white);letter-spacing:2px}
+.mobile-logo a{color:var(--white);text-decoration:none}
+.hamburger{background:none;border:none;cursor:pointer;padding:8px}
+.hamburger span{display:block;width:24px;height:2px;background:var(--white);margin:5px 0;transition:all .3s}
+.sidebar-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:99}
+
+/* ── MAIN CONTENT ── */
+.page-wrapper{display:flex;min-height:100vh}
+.main-content{margin-left:var(--sidebar-w);flex:1;max-width:960px;padding:0 60px}
+
+/* ── PAGE HEADER ── */
+.page-header{padding:60px 0 40px}
+.page-eyebrow{font-family:'Montserrat',sans-serif;font-weight:600;font-size:13px;color:var(--amber);text-transform:uppercase;letter-spacing:3px;margin-bottom:16px}
+.page-title{font-family:'Montserrat',sans-serif;font-weight:900;font-size:42px;color:var(--white);line-height:1.15;margin-bottom:16px}
+.page-subtitle{font-family:'Quicksand',sans-serif;font-size:18px;color:var(--text-body);line-height:1.7;max-width:640px}
+.reader-count{font-family:'Space Mono',monospace;font-size:14px;color:var(--amber);margin-top:16px}
+
+/* ── SECTIONS ── */
+.section{padding:48px 0;border-top:1px solid var(--border)}
+.section-heading{font-family:'Montserrat',sans-serif;font-weight:900;font-size:28px;color:var(--white);margin-bottom:24px;line-height:1.2}
+
+/* ── CADENCE CARDS ── */
+.cadence-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:20px;margin-bottom:32px}
+.cadence-card{background:var(--bg-card);border:1px solid var(--border);border-radius:6px;padding:24px 20px;transition:border-color .3s}
+.cadence-card:hover{border-color:#2a2a2a}
+.cadence-day{font-family:'Space Mono',monospace;font-size:11px;color:var(--amber);text-transform:uppercase;letter-spacing:1.5px;margin-bottom:8px}
+.cadence-name{font-family:'Montserrat',sans-serif;font-weight:800;font-size:17px;color:var(--white);margin-bottom:8px;line-height:1.3}
+.cadence-desc{font-size:14px;color:var(--text-mid);line-height:1.6}
+
+/* ── RECENT ISSUES ── */
+.issues-list{display:flex;flex-direction:column;gap:2px;margin-bottom:24px}
+.issue-item{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:18px 20px;background:var(--bg-card);border:1px solid var(--border);border-radius:4px;transition:border-color .2s}
+.issue-item:hover{border-color:#2a2a2a}
+.issue-left{flex:1}
+.issue-tag{font-family:'Space Mono',monospace;font-size:10px;color:var(--amber);text-transform:uppercase;letter-spacing:1px;margin-bottom:4px}
+.issue-title{font-family:'Montserrat',sans-serif;font-weight:700;font-size:15px;color:var(--text-high);line-height:1.3}
+.issue-date{font-family:'Space Mono',monospace;font-size:11px;color:var(--text-low);white-space:nowrap}
+.issues-cta{display:inline-block;margin-top:16px;font-family:'Montserrat',sans-serif;font-weight:700;font-size:13px;color:var(--amber);text-transform:uppercase;letter-spacing:1px}
+.issues-cta::after{content:' \2192'}
+
+/* ── LEAD MAGNET ── */
+.lead-magnet{background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:36px 32px;display:flex;gap:32px;align-items:center;margin:48px 0}
+.lead-magnet-text{flex:1}
+.lead-magnet-text h3{font-family:'Montserrat',sans-serif;font-weight:900;font-size:22px;color:var(--white);margin-bottom:8px;line-height:1.3}
+.lead-magnet-text p{font-size:15px;color:var(--text-body);line-height:1.7;margin-bottom:16px}
+.lead-magnet-badge{font-family:'Space Mono',monospace;font-size:10px;color:var(--amber);text-transform:uppercase;letter-spacing:1.5px;margin-bottom:12px}
+.btn-primary{display:inline-block;font-family:'Montserrat',sans-serif;font-weight:800;font-size:14px;color:var(--bg);background:var(--amber);border:none;border-radius:4px;padding:12px 28px;cursor:pointer;transition:background .2s;text-transform:uppercase;letter-spacing:1px}
+.btn-primary:hover{background:var(--amber-bright);color:var(--bg)}
+
+/* ── SIGNUP SECTION ── */
+.signup-section{background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:40px 36px;max-width:560px;margin:48px 0}
+.signup-section h2{font-family:'Montserrat',sans-serif;font-weight:900;font-size:26px;color:var(--white);margin-bottom:8px}
+.signup-section .signup-sub{font-size:15px;color:var(--text-mid);margin-bottom:24px;line-height:1.6}
+.signup-row{display:flex;gap:12px;margin-bottom:12px}
+.signup-row input{flex:1;background:var(--bg);border:1px solid var(--border);border-radius:4px;color:var(--text-high);font-family:'Quicksand',sans-serif;font-size:15px;padding:12px 14px;outline:none;transition:border-color .2s}
+.signup-row input:focus{border-color:var(--amber)}
+.signup-note{font-family:'Montserrat',sans-serif;font-size:11px;color:var(--text-low);margin-top:8px}
+
+/* ── PULL QUOTE ── */
+.pull-quote{border-left:3px solid var(--amber);padding:24px 0 24px 28px;margin:48px 0;max-width:700px}
+.pull-quote blockquote{font-family:'Quicksand',sans-serif;font-size:22px;font-weight:500;color:var(--text-high);line-height:1.6;font-style:italic}
+
+/* ── FOOTER ── */
+.main-footer{padding:40px 0 60px;border-top:1px solid var(--border)}
+.main-footer p{font-family:'Montserrat',sans-serif;font-size:13px;font-weight:400;color:var(--text-low);opacity:.4}
+.main-footer a{color:var(--text-low)}
+
+/* ── RESPONSIVE ── */
+@media(max-width:900px){
+  .mobile-header{display:flex}
+  .sidebar{transform:translateX(-100%);transition:transform .3s ease;z-index:200;width:280px}
+  .sidebar.open{transform:translateX(0)}
+  .sidebar-overlay.open{display:block}
+  .main-content{margin-left:0;padding:80px 24px 40px;max-width:100%}
+  .page-title{font-size:32px}
+  .cadence-grid{grid-template-columns:1fr}
+  .lead-magnet{flex-direction:column;text-align:center}
+  .signup-row{flex-direction:column}
+}
+</style>
+</head>
+<body>
+
+<!-- Mobile Header -->
+<div class="mobile-header">
+  <span class="mobile-logo"><a href="index.html">MIKE WARREN</a></span>
+  <button class="hamburger" onclick="toggleSidebar()" aria-label="Menu"><span></span><span></span><span></span></button>
+</div>
+<div class="sidebar-overlay" onclick="toggleSidebar()"></div>
+
+<div class="page-wrapper">
+
+<!-- Sidebar -->
+<nav class="sidebar">
+  <div class="sidebar-logo">
+    <a href="index.html">
+      <div class="name-mike">MIKE</div>
+      <div class="name-warren">WARREN</div>
+    </a>
+  </div>
+  <div class="nav-section">
+    <div class="nav-section-title">About Mike</div>
+    <a href="my-story.html" class="nav-link">My Story</a>
+    <a href="books.html" class="nav-link">Mike's Books</a>
+    <a href="public-speaking.html" class="nav-link">Public Speaking</a>
+    <a href="press-media.html" class="nav-link">Press &amp; Media</a>
+    <a href="give-back.html" class="nav-link">Give Back</a>
+  </div>
+  <div class="nav-section">
+    <div class="nav-section-title">What I've Built</div>
+    <a href="what-ive-built.html#software" class="nav-link">Software</a>
+    <a href="what-ive-built.html#acquisitions" class="nav-link">Business Acquisitions</a>
+    <a href="what-ive-built.html#realestate" class="nav-link">Real Estate &amp; Alt. Investing</a>
+  </div>
+  <div class="nav-section">
+    <div class="nav-section-title">My Content</div>
+    <a href="buyers-brief.html" class="nav-link active">The Buyer's Brief</a>
+    <a href="youtube.html" class="nav-link">YouTube Channels</a>
+    <a href="articles.html" class="nav-link">Articles</a>
+    <a href="socials.html" class="nav-link">Socials</a>
+  </div>
+  <div class="sidebar-footer">
+    <div class="social-icons">
+      <a href="https://instagram.com/themikewarren" target="_blank">IG</a>
+      <a href="https://linkedin.com/in/themikewarren" target="_blank">LI</a>
+      <a href="https://youtube.com/@themikewarren" target="_blank">YT</a>
+      <a href="https://x.com/themikewarren" target="_blank">X</a>
+    </div>
+    <div class="sidebar-copyright">themikewarren.com &copy; 2026<br>All Rights Reserved<br><a href="#">Terms &amp; Conditions</a></div>
+  </div>
+</nav>
+
+<!-- Main Content -->
+<main class="main-content">
+
+  <section class="page-header">
+    <div class="page-eyebrow">My Content</div>
+    <h1 class="page-title">The Buyer's Brief</h1>
+    <p class="page-subtitle">Real deal breakdowns, market analysis, and the strategies behind actual business acquisitions. Delivered to your inbox 3x per week. Free.</p>
+    <div class="reader-count">90,000+ acquisition-focused readers</div>
+  </section>
+
+  <!-- What You Get -->
+  <section class="section">
+    <h2 class="section-heading">What You Get</h2>
+    <div class="cadence-grid">
+      <div class="cadence-card">
+        <div class="cadence-day">Tuesday</div>
+        <div class="cadence-name">Deal Breakdown</div>
+        <div class="cadence-desc">A real deal pulled apart. Asking price, cash flow, financing structure, Bulletproof score, and whether I'd pursue it or pass.</div>
+      </div>
+      <div class="cadence-card">
+        <div class="cadence-day">Thursday</div>
+        <div class="cadence-name">Market Pulse</div>
+        <div class="cadence-desc">What's moving in the acquisition market. SBA trends, deal flow data, sector analysis, and what I'm watching this week.</div>
+      </div>
+      <div class="cadence-card">
+        <div class="cadence-day">Saturday</div>
+        <div class="cadence-name">From Mike's Desk</div>
+        <div class="cadence-desc">Lessons from 35 years of dealmaking. No theory. Just the hard-won insights, mistakes, and strategies from real transactions.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pull Quote -->
+  <div class="pull-quote">
+    <blockquote>"I don't write about deals I read about. I write about deals I've done, deals I've passed on, and deals I wish I hadn't."</blockquote>
+  </div>
+
+  <!-- Recent Issues -->
+  <section class="section">
+    <h2 class="section-heading">Recent Issues</h2>
+    <div class="issues-list">
+      <div class="issue-item">
+        <div class="issue-left">
+          <div class="issue-tag">Deal Breakdown</div>
+          <div class="issue-title">$1.2M HVAC Company: Why the Numbers Lied</div>
+        </div>
+        <div class="issue-date">Mar 25, 2026</div>
+      </div>
+      <div class="issue-item">
+        <div class="issue-left">
+          <div class="issue-tag">Market Pulse</div>
+          <div class="issue-title">SBA Lending Tightens: What It Means for Q2 Deals</div>
+        </div>
+        <div class="issue-date">Mar 20, 2026</div>
+      </div>
+      <div class="issue-item">
+        <div class="issue-left">
+          <div class="issue-tag">From Mike's Desk</div>
+          <div class="issue-title">The Deal I Turned Down That Made Someone Else $400K</div>
+        </div>
+        <div class="issue-date">Mar 15, 2026</div>
+      </div>
+      <div class="issue-item">
+        <div class="issue-left">
+          <div class="issue-tag">Deal Breakdown</div>
+          <div class="issue-title">Laundromat Chain at 2.8x Multiple: Bulletproof or Bust?</div>
+        </div>
+        <div class="issue-date">Mar 11, 2026</div>
+      </div>
+    </div>
+    <a class="issues-cta" href="https://buyersbrief.net" target="_blank">Read the Full Archive</a>
+  </section>
+
+  <!-- Lead Magnet -->
+  <div class="lead-magnet">
+    <img src="https://m.media-amazon.com/images/P/B088WZBGKB.01._SCLZZZZZZZ_SX500_.jpg" alt="Real Estate Is for Suckers book cover" style="width:160px;height:auto;filter:drop-shadow(0 8px 24px rgba(0,0,0,0.5));border-radius:4px;flex-shrink:0">
+    <div class="lead-magnet-text">
+      <div class="lead-magnet-badge">Free Download</div>
+      <h3>Real Estate Is for Suckers</h3>
+      <p>Why buying a profitable business beats real estate investing — and how to do it using other people's money. Mike's take on why the traditional wealth playbook is broken.</p>
+      <a class="btn-primary" href="https://buyersbrief.net/real-estate-is-for-suckers.pdf" target="_blank">Download Free PDF</a>
+    </div>
+  </div>
+
+  <!-- Subscribe -->
+  <section class="signup-section" id="subscribe">
+    <h2>Subscribe Free</h2>
+    <p class="signup-sub">Join 90,000+ readers getting real deal breakdowns, market analysis, and acquisition strategies delivered 3x per week.</p>
+    <form id="signupForm" onsubmit="handleSignup(event)">
+      <div class="signup-row">
+        <input type="email" id="subEmail" placeholder="Your email address" required>
+        <button type="submit" class="btn-primary">Subscribe</button>
+      </div>
+    </form>
+    <div id="signupSuccess" style="display:none;padding:16px 0">
+      <p style="font-family:'Montserrat',sans-serif;font-weight:700;font-size:18px;color:var(--amber);margin-bottom:4px">You're in!</p>
+      <p style="color:var(--text-body);font-size:15px">Check your inbox for your first issue.</p>
+    </div>
+    <p class="signup-note">No spam. Unsubscribe anytime. Your email stays with The Buyer's Brief.</p>
+  </section>
+
+  <footer class="main-footer">
+    <p>themikewarren.com &copy; 2026 / All Rights Reserved / <a href="#">Terms &amp; Conditions</a></p>
+  </footer>
+
+</main>
+</div>
+
+<script>
+function toggleSidebar(){
+  document.querySelector('.sidebar').classList.toggle('open');
+  document.querySelector('.sidebar-overlay').classList.toggle('open');
+}
+function handleSignup(e){
+  e.preventDefault();
+  // Placeholder — wire to Beehiiv embed or redirect later
+  document.getElementById('signupForm').style.display='none';
+  document.getElementById('signupSuccess').style.display='block';
+}
+</script>
+</body>
+</html>
