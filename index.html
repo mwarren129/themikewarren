@@ -3,10 +3,71 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Mike Warren — Investor, Author, Entrepreneur</title>
+<title>Mike Warren — Investor, Author, Entrepreneur | 35+ Years in Private Equity</title>
+
+<!-- SEO Meta Description -->
+<meta name="description" content="Mike Warren, 35+ year private equity veteran across three PE firms, has evaluated nearly $1 billion in business acquisitions and trained 50,000+ professionals worldwide. Author of seven bestselling books on the Bulletproof Methodology for buying profitable businesses.">
+<meta name="author" content="Mike Warren">
+<link rel="canonical" href="https://themikewarren.com/">
+
+<!-- Open Graph / Facebook / LinkedIn -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://themikewarren.com/">
+<meta property="og:title" content="Mike Warren — Investor, Author, Entrepreneur">
+<meta property="og:description" content="35+ years across three private equity firms. Nearly $1B in business acquisitions evaluated. 50,000+ professionals trained. 7 bestselling books on the Bulletproof Methodology.">
+<meta property="og:image" content="https://themikewarren.com/hero-nyc-interview.jpg">
+
+<!-- Twitter / X Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:url" content="https://themikewarren.com/">
+<meta name="twitter:title" content="Mike Warren — Investor, Author, Entrepreneur">
+<meta name="twitter:description" content="35+ years across three private equity firms. Nearly $1B in business acquisitions evaluated. The Bulletproof Methodology for buying profitable businesses.">
+<meta name="twitter:image" content="https://themikewarren.com/hero-nyc-interview.jpg">
+<meta name="twitter:site" content="@themikewarren">
+
+<!-- Structured Data (Schema.org) - SEO-keyword-rich variant for AI engines and Google rich results -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Mike Warren",
+  "alternateName": "@themikewarren",
+  "url": "https://themikewarren.com",
+  "image": "https://themikewarren.com/hero-nyc-interview.jpg",
+  "jobTitle": "Private Equity Investor, Author, Business Acquisition Expert",
+  "description": "Mike Warren is a private equity veteran with 35+ years across three PE firms. He has evaluated nearly $1 billion in business acquisitions, trained over 50,000 professionals in business buying strategies, and authored seven bestselling books on private equity, SBA financing, and the Bulletproof Methodology for acquiring profitable small and mid-market businesses.",
+  "sameAs": [
+    "https://instagram.com/themikewarren",
+    "https://linkedin.com/in/themikewarren",
+    "https://youtube.com/@themikewarren",
+    "https://x.com/themikewarren"
+  ],
+  "knowsAbout": [
+    "Business Acquisitions",
+    "Private Equity",
+    "SBA Loans",
+    "Deal Structure",
+    "Mergers and Acquisitions",
+    "Small Business Investing",
+    "Seller Financing",
+    "Due Diligence",
+    "Bulletproof Methodology",
+    "Buy Side M&A",
+    "Search Funds",
+    "Entrepreneurship Through Acquisition"
+  ],
+  "knowsLanguage": "en"
+}
+</script>
+
+<!-- Preload hero image for fastest LCP -->
+<link rel="preload" as="image" href="hero-nyc-interview.jpg" fetchpriority="high">
+
+<!-- Fonts: preconnect for faster handshake, then load -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@400;500;600;700;800;900&family=Quicksand:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+
 <style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 :root {
@@ -24,7 +85,7 @@ body {
 }
 a { color: var(--amber); text-decoration: none; transition: color 0.2s; }
 a:hover { color: var(--amber-bright); }
-img { display: block; max-width: 100%; }
+img { display: block; max-width: 100%; height: auto; }
 .page-wrapper { display: flex; min-height: 100vh; }
 .sidebar {
   position: fixed; top: 0; left: 0; width: var(--sidebar-width); height: 100vh;
@@ -76,6 +137,7 @@ img { display: block; max-width: 100%; }
 .hero { padding: 60px 0 40px; }
 .hero-photo {
   position: relative; border-radius: 4px; overflow: hidden; margin-bottom: 40px;
+  aspect-ratio: 16 / 9; background: var(--bg-card);
 }
 .hero-photo img { width: 100%; height: auto; display: block; }
 .hero-photo::after {
@@ -283,10 +345,10 @@ img { display: block; max-width: 100%; }
   </div>
   <div class="sidebar-footer">
     <div class="social-icons">
-      <a href="https://instagram.com/themikewarren" target="_blank">IG</a>
-      <a href="https://linkedin.com/in/themikewarren" target="_blank">LI</a>
-      <a href="https://youtube.com/@themikewarren" target="_blank">YT</a>
-      <a href="https://x.com/themikewarren" target="_blank">X</a>
+      <a href="https://instagram.com/themikewarren" target="_blank" rel="noopener">IG</a>
+      <a href="https://linkedin.com/in/themikewarren" target="_blank" rel="noopener">LI</a>
+      <a href="https://youtube.com/@themikewarren" target="_blank" rel="noopener">YT</a>
+      <a href="https://x.com/themikewarren" target="_blank" rel="noopener">X</a>
     </div>
     <div class="sidebar-copyright">themikewarren.com &copy; 2026<br>All Rights Reserved<br><a href="#">Terms &amp; Conditions</a></div>
   </div>
@@ -294,12 +356,17 @@ img { display: block; max-width: 100%; }
 <main class="main-content">
   <section class="hero">
     <div class="hero-photo">
-      <img src="hero-nyc-interview.jpg" alt="Mike Warren being interviewed in New York City with Manhattan skyline">
+      <img src="hero-nyc-interview.jpg"
+           alt="Mike Warren being interviewed in New York City with Manhattan skyline"
+           width="1600" height="900"
+           fetchpriority="high"
+           loading="eager"
+           decoding="async">
     </div>
     <div class="hero-text-below">
       <div class="hero-eyebrow">Investor &middot; Author &middot; Entrepreneur</div>
       <h1 class="hero-headline">Who is Mike Warren?</h1>
-      <p class="hero-bio">Over the past 35 years, Mike has completed more than 5,000 transactions across three private equity firms. He's authored seven bestselling books, trained 50,000 professionals worldwide, and built a reputation as one of the most trusted voices in business acquisition. Today, he doesn't just teach people how to buy businesses. He buys them alongside his clients.</p>
+      <p class="hero-bio">Over the past 35 years, Mike has spent his career across three private equity firms, where he's evaluated nearly $1 billion in business acquisitions. He's authored seven bestselling books, trained 50,000+ professionals worldwide, and built a reputation as one of the most trusted voices in business acquisition. Today, he doesn't just teach people how to buy businesses. He buys them alongside his clients.</p>
       <a href="my-story.html" class="btn-primary">Full Story</a>
     </div>
   </section>
@@ -308,48 +375,65 @@ img { display: block; max-width: 100%; }
   </section>
   <section class="featured-on">
     <div class="featured-on-label">As Featured On</div>
-    <img src="logo-bar-featured.png" alt="As featured on Fortune, FOX, CNN, SUCCESS, USA Today, SiriusXM, ABC, NBC, Entrepreneur">
+    <img src="logo-bar-featured.png"
+         alt="As featured on Fortune, FOX, CNN, SUCCESS, USA Today, SiriusXM, ABC, NBC, Entrepreneur"
+         width="1200" height="120"
+         loading="lazy"
+         decoding="async">
   </section>
   <section class="video-section">
     <div class="video-label">As Seen With Kevin Harrington &mdash; Original Shark on Shark Tank</div>
     <div class="video-wrapper">
-      <iframe src="https://www.youtube.com/embed/KqR3Q-6765E" title="Kevin Harrington introduces Mike Warren" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      <iframe src="https://www.youtube.com/embed/KqR3Q-6765E"
+              title="Kevin Harrington introduces Mike Warren"
+              loading="lazy"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen></iframe>
     </div>
   </section>
   <section class="celebrity-section">
     <div class="celebrity-label">In The Room With</div>
     <div class="celebrity-grid">
       <div class="celeb-card">
-        <img class="celeb-img" src="celeb-branson.jpg" alt="Mike Warren with Richard Branson">
+        <img class="celeb-img" src="celeb-branson.jpg" alt="Mike Warren with Richard Branson"
+             width="600" height="600" loading="lazy" decoding="async">
         <div class="celeb-name">Richard Branson &middot; Virgin Group Founder</div>
       </div>
       <div class="celeb-card">
-        <img class="celeb-img" src="celeb-kevin-harrington.png" alt="Kevin Harrington - Shark from ABC's Shark Tank">
+        <img class="celeb-img" src="celeb-kevin-harrington.png" alt="Kevin Harrington - Shark from ABC's Shark Tank"
+             width="600" height="600" loading="lazy" decoding="async">
         <div class="celeb-name">Kevin Harrington &middot; Shark Tank</div>
       </div>
       <div class="celeb-card">
-        <img class="celeb-img" src="celeb-wozniak.jpg" alt="Mike Warren with Steve Wozniak">
+        <img class="celeb-img" src="celeb-wozniak.jpg" alt="Mike Warren with Steve Wozniak"
+             width="600" height="600" loading="lazy" decoding="async">
         <div class="celeb-name">Steve Wozniak &middot; Apple Co-Founder</div>
       </div>
       <div class="celeb-card">
-        <img class="celeb-img" src="celeb_gaga.jpg" alt="Mike Warren with Lady Gaga">
+        <img class="celeb-img" src="celeb_gaga.jpg" alt="Mike Warren with Lady Gaga"
+             width="600" height="600" loading="lazy" decoding="async">
         <div class="celeb-name">Lady Gaga &middot; Artist &amp; Entrepreneur</div>
       </div>
       <div class="celeb-card">
-        <img class="celeb-img" src="celeb-cara.jpg" alt="Mike Warren with Cara Delevingne">
+        <img class="celeb-img" src="celeb-cara.jpg" alt="Mike Warren with Cara Delevingne"
+             width="600" height="600" loading="lazy" decoding="async">
         <div class="celeb-name">Cara Delevingne &middot; Model &amp; Actress</div>
       </div>
       <div class="celeb-card">
-        <img class="celeb-img" src="celeb-lisa.jpg" alt="Mike Warren with Lisa Vanderpump">
+        <img class="celeb-img" src="celeb-lisa.jpg" alt="Mike Warren with Lisa Vanderpump"
+             width="600" height="600" loading="lazy" decoding="async">
         <div class="celeb-name">Lisa Vanderpump &middot; Restaurateur &amp; TV Star</div>
       </div>
     </div>
   </section>
   <section class="lifestyle-strip">
     <div class="lifestyle-grid">
-      <img src="life-cockpit.jpg" alt="Mike in cockpit">
-      <img src="life-boat.jpg" alt="Mike at the helm">
-      <img src="life-sunset.jpg" alt="Beach sunset">
+      <img src="life-cockpit.jpg" alt="Mike in cockpit"
+           width="800" height="600" loading="lazy" decoding="async">
+      <img src="life-boat.jpg" alt="Mike at the helm"
+           width="800" height="600" loading="lazy" decoding="async">
+      <img src="life-sunset.jpg" alt="Beach sunset"
+           width="800" height="600" loading="lazy" decoding="async">
     </div>
   </section>
   <section class="methodology">
@@ -427,7 +511,7 @@ img { display: block; max-width: 100%; }
       <h3>The Buyer's Brief</h3>
       <p>Real deals. Real numbers. Real strategies for acquiring profitable businesses. Three issues a week, delivered straight to your inbox.</p>
       <div class="newsletter-form">
-        <input type="email" placeholder="Enter your email">
+        <input type="email" placeholder="Enter your email" aria-label="Email address">
         <button type="button">Subscribe</button>
       </div>
     </div>
