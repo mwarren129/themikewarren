@@ -25,7 +25,7 @@
 <meta name="twitter:image" content="https://themikewarren.com/hero-nyc-interview.jpg">
 <meta name="twitter:site" content="@themikewarren">
 
-<!-- Structured Data (Schema.org) - SEO-keyword-rich variant for AI engines and Google rich results -->
+<!-- Structured Data (Schema.org) - Person + Organization for maximum AI engine matching -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -60,8 +60,24 @@
 }
 </script>
 
-<!-- Preload hero image for fastest LCP -->
-<link rel="preload" as="image" href="hero-nyc-interview.jpg" fetchpriority="high">
+<!-- WebSite schema for sitelinks searchbox potential -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "Mike Warren",
+  "alternateName": "themikewarren.com",
+  "url": "https://themikewarren.com/",
+  "description": "Personal site of Mike Warren - private equity veteran, author of seven bestselling books on business acquisitions, and creator of the Bulletproof Methodology.",
+  "publisher": {
+    "@type": "Person",
+    "name": "Mike Warren"
+  }
+}
+</script>
+
+<!-- Preload hero image for fastest LCP (WebP version) -->
+<link rel="preload" as="image" href="hero-nyc-interview.webp" type="image/webp" fetchpriority="high">
 
 <!-- Fonts: preconnect for faster handshake, then load -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -356,12 +372,15 @@ img { display: block; max-width: 100%; height: auto; }
 <main class="main-content">
   <section class="hero">
     <div class="hero-photo">
-      <img src="hero-nyc-interview.jpg"
-           alt="Mike Warren being interviewed in New York City with Manhattan skyline"
-           width="1600" height="900"
-           fetchpriority="high"
-           loading="eager"
-           decoding="async">
+      <picture>
+        <source srcset="hero-nyc-interview.webp" type="image/webp">
+        <img src="hero-nyc-interview.jpg"
+             alt="Mike Warren being interviewed in New York City with Manhattan skyline"
+             width="1600" height="900"
+             fetchpriority="high"
+             loading="eager"
+             decoding="async">
+      </picture>
     </div>
     <div class="hero-text-below">
       <div class="hero-eyebrow">Investor &middot; Author &middot; Entrepreneur</div>
@@ -375,11 +394,14 @@ img { display: block; max-width: 100%; height: auto; }
   </section>
   <section class="featured-on">
     <div class="featured-on-label">As Featured On</div>
-    <img src="logo-bar-featured.png"
-         alt="As featured on Fortune, FOX, CNN, SUCCESS, USA Today, SiriusXM, ABC, NBC, Entrepreneur"
-         width="1200" height="120"
-         loading="lazy"
-         decoding="async">
+    <picture>
+      <source srcset="logo-bar-featured.webp" type="image/webp">
+      <img src="logo-bar-featured.png"
+           alt="As featured on Fortune, FOX, CNN, SUCCESS, USA Today, SiriusXM, ABC, NBC, Entrepreneur"
+           width="1200" height="120"
+           loading="lazy"
+           decoding="async">
+    </picture>
   </section>
   <section class="video-section">
     <div class="video-label">As Seen With Kevin Harrington &mdash; Original Shark on Shark Tank</div>
@@ -395,45 +417,72 @@ img { display: block; max-width: 100%; height: auto; }
     <div class="celebrity-label">In The Room With</div>
     <div class="celebrity-grid">
       <div class="celeb-card">
-        <img class="celeb-img" src="celeb-branson.jpg" alt="Mike Warren with Richard Branson"
-             width="600" height="600" loading="lazy" decoding="async">
+        <picture>
+          <source srcset="celeb-branson.webp" type="image/webp">
+          <img class="celeb-img" src="celeb-branson.jpg" alt="Mike Warren with Richard Branson"
+               width="600" height="600" loading="lazy" decoding="async">
+        </picture>
         <div class="celeb-name">Richard Branson &middot; Virgin Group Founder</div>
       </div>
       <div class="celeb-card">
-        <img class="celeb-img" src="celeb-kevin-harrington.png" alt="Kevin Harrington - Shark from ABC's Shark Tank"
-             width="600" height="600" loading="lazy" decoding="async">
+        <picture>
+          <source srcset="celeb-kevin-harrington.webp" type="image/webp">
+          <img class="celeb-img" src="celeb-kevin-harrington.png" alt="Kevin Harrington - Shark from ABC's Shark Tank"
+               width="600" height="600" loading="lazy" decoding="async">
+        </picture>
         <div class="celeb-name">Kevin Harrington &middot; Shark Tank</div>
       </div>
       <div class="celeb-card">
-        <img class="celeb-img" src="celeb-wozniak.jpg" alt="Mike Warren with Steve Wozniak"
-             width="600" height="600" loading="lazy" decoding="async">
+        <picture>
+          <source srcset="celeb-wozniak.webp" type="image/webp">
+          <img class="celeb-img" src="celeb-wozniak.jpg" alt="Mike Warren with Steve Wozniak"
+               width="600" height="600" loading="lazy" decoding="async">
+        </picture>
         <div class="celeb-name">Steve Wozniak &middot; Apple Co-Founder</div>
       </div>
       <div class="celeb-card">
-        <img class="celeb-img" src="celeb_gaga.jpg" alt="Mike Warren with Lady Gaga"
-             width="600" height="600" loading="lazy" decoding="async">
+        <picture>
+          <source srcset="celeb_gaga.webp" type="image/webp">
+          <img class="celeb-img" src="celeb_gaga.jpg" alt="Mike Warren with Lady Gaga"
+               width="600" height="600" loading="lazy" decoding="async">
+        </picture>
         <div class="celeb-name">Lady Gaga &middot; Artist &amp; Entrepreneur</div>
       </div>
       <div class="celeb-card">
-        <img class="celeb-img" src="celeb-cara.jpg" alt="Mike Warren with Cara Delevingne"
-             width="600" height="600" loading="lazy" decoding="async">
+        <picture>
+          <source srcset="celeb-cara.webp" type="image/webp">
+          <img class="celeb-img" src="celeb-cara.jpg" alt="Mike Warren with Cara Delevingne"
+               width="600" height="600" loading="lazy" decoding="async">
+        </picture>
         <div class="celeb-name">Cara Delevingne &middot; Model &amp; Actress</div>
       </div>
       <div class="celeb-card">
-        <img class="celeb-img" src="celeb-lisa.jpg" alt="Mike Warren with Lisa Vanderpump"
-             width="600" height="600" loading="lazy" decoding="async">
+        <picture>
+          <source srcset="celeb-lisa.webp" type="image/webp">
+          <img class="celeb-img" src="celeb-lisa.jpg" alt="Mike Warren with Lisa Vanderpump"
+               width="600" height="600" loading="lazy" decoding="async">
+        </picture>
         <div class="celeb-name">Lisa Vanderpump &middot; Restaurateur &amp; TV Star</div>
       </div>
     </div>
   </section>
   <section class="lifestyle-strip">
     <div class="lifestyle-grid">
-      <img src="life-cockpit.jpg" alt="Mike in cockpit"
-           width="800" height="600" loading="lazy" decoding="async">
-      <img src="life-boat.jpg" alt="Mike at the helm"
-           width="800" height="600" loading="lazy" decoding="async">
-      <img src="life-sunset.jpg" alt="Beach sunset"
-           width="800" height="600" loading="lazy" decoding="async">
+      <picture>
+        <source srcset="life-cockpit.webp" type="image/webp">
+        <img src="life-cockpit.jpg" alt="Mike in cockpit"
+             width="800" height="600" loading="lazy" decoding="async">
+      </picture>
+      <picture>
+        <source srcset="life-boat.webp" type="image/webp">
+        <img src="life-boat.jpg" alt="Mike at the helm"
+             width="800" height="600" loading="lazy" decoding="async">
+      </picture>
+      <picture>
+        <source srcset="life-sunset.webp" type="image/webp">
+        <img src="life-sunset.jpg" alt="Beach sunset"
+             width="800" height="600" loading="lazy" decoding="async">
+      </picture>
     </div>
   </section>
   <section class="methodology">
