@@ -110,7 +110,11 @@ img { display: block; max-width: 100%; height: auto; }
   background: var(--bg); border-right: 1px solid var(--border);
   padding: 48px 32px 32px; display: flex; flex-direction: column;
   overflow-y: auto; z-index: 100;
+  scrollbar-width: thin; scrollbar-color: var(--amber) transparent;
 }
+.sidebar::-webkit-scrollbar { width: 8px; }
+.sidebar::-webkit-scrollbar-track { background: transparent; }
+.sidebar::-webkit-scrollbar-thumb { background: var(--amber); border-radius: 8px; }
 .sidebar-logo { margin-bottom: 48px; }
 .sidebar-logo .name-mike {
   font-family: 'Bebas Neue', sans-serif; font-size: 52px; font-weight: 400;
